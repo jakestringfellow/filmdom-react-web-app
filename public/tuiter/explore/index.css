@@ -145,6 +145,7 @@
    padding-left: 50px;
 
    top: 6px;
+   
 
    border-radius: 50px;
 
@@ -156,6 +157,96 @@
    bottom: 55px;
 }
 
+.gear-icon {
+
+   position: relative;
+   left: 209px;
+   bottom: 29px;
+   color: #006eff;
+}
+
+.featured-event {
+   width:100%;
+   height: 100%;
+}
+.featured-event-text {
+   z-index:1;
+   font-size: 1.2em;
+   bottom: 23px;
+   padding-right: 150px;
+   right: 150px;
+   }
+
+.tuit-topic {
+   color: gray;
+   width:100%;
+   margin: 0 auto;
+   text-align:left;
+   float: left;
+}
+
+.tuit-author {
+   color: black;
+   margin: 0 auto;
+   float:left;
+   text-align:left;
+   font-weight: 500;
+}
+
+.tuit-time {
+   color: gray;
+   margin: 0 auto;
+   text-align:left;
+   padding-left: 10px;
+}
+
+.tuit-img {
+   width: 70px;
+   margin: 0 auto;
+   text-align:right;
+   float: right;
+   border-radius: 15%;
+}
+
+.container {
+   column-gap: 5px;
+}
+
+.suggested-follow-heading {
+   float: left;
+   color: black;
+   font-weight: 800;
+   font-size: medium;
+   margin: 0;
+   
+
+}
+
+.suggested-follow-img {
+   float: left;
+   border-radius: 50px;
+
+}
+.suggested-handle {
+   float: left;
+   color: black;
+   font-weight: 300;
+   font-size: medium;
+   margin: 0;
+   top: 15px;
+}
+
+.suggested-follow-button {
+   
+}
+
+.suggested-name {
+   float: left;
+   color: black;
+   font-weight: 800;
+   font-size: medium;
+   margin: 0;
+}
  
    
    
