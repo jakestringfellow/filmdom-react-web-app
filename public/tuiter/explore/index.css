@@ -94,6 +94,7 @@ body {
     position: relative;
  
     top: 5px;
+    width: fit-content;
  
  }
 
@@ -103,15 +104,15 @@ body {
 
     position: relative;
  
-    padding-right: 500px;
+    padding-right: 0px;
     padding-left: 20px;
     padding-top: 20px;
 
-    width: 100%
+    width: 80%
  
  }
 
- .ttr-search .fas.fa-search {
+.fas.fa-search {
 
     position: absolute;
  
@@ -121,13 +122,13 @@ body {
  
  }
 
- .ttr-search .fas.fa-gear {
+ .fas.fa-gear {
 
     position: absolute;
 
     top: 34px;
 
-    left: 780px;
+    left: 950px;
  }
 
  .ttr-search
@@ -151,19 +152,49 @@ body {
 .ttr-gray-border {
 
     border: 1px lightgrey solid;
-    padding-right: 115px;
+    width: 90%;
     padding-bottom: 1000px;
  
  }
 
  .grid-row {
     clear: both;
-    padding-left: 80px;
+    padding-left: 50px;
  }
  
  .grid-tab {
-    width: 20%;
+    list-style-type: none;
+    color: rgb(140, 140, 140);
+    width: 12%;
     float: left;
+    padding-left: 10%;
+ }
+
+ .grid-tab-active {
+    list-style-type: none;
+    color: rgb(0, 0, 0);
+    width: 70px;
+    float: left;
+    
+    
+
+    border-bottom: 1px rgb(10, 177, 255) solid;
+    border-bottom-width: 5px;
+    
+
+ }
+
+ .featured-event {
+    width: 100%;
+    padding-right: 115px
+ }
+
+ .featured-event-text {
+    z-index: 10;
+    color: white;
+    position: relative;
+    bottom: 60px;
+    left: 20px;
  }
  
    
