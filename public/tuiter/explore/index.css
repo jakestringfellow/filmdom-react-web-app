@@ -126,6 +126,36 @@
  
  }
 
+ .btn-primary.override-bs {
+
+   position: relative;
+
+   top: 6px;
+
+   background-color: #006eff;
+
+   border-radius: 50px;
+
+}
+
+.form-control.override-bs {
+
+   position: relative;
+
+   padding-left: 50px;
+
+   top: 6px;
+
+   border-radius: 50px;
+
+}
+
+.search-icon {
+   position: relative;
+   right: 26px;
+   bottom: 55px;
+}
+
  
    
    
