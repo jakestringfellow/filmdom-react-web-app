@@ -1,3 +1,5 @@
+
+
 body {
 
     font: 14px Arial;
@@ -59,10 +61,99 @@ body {
  
  }
 
- .rounded-corners-all-around {
-    border-radius: 50px;
-   }
-   
-   
+ .ttr-navigation > li > a > i {
+
+    width: 40px;
+ 
+    text-align: center;
+ 
+ }
+
+ .ttr-navigation > li.ttr-button {
+
+    height: 40px;
+ 
+    background-color: rgb(29, 155, 240);
+ 
+    font-weight: bold;
+ 
+    text-align: center !important;
+ 
+    margin: auto;
+ 
+    margin-top: 10px;
+ 
+    border-radius: 25px;
+ 
+ }
+ 
+ .ttr-navigation > li.ttr-button > a {
+ 
+    color: white;
+ 
+    position: relative;
+ 
+    top: 5px;
+ 
+ }
+
+
+
+.ttr-search {
+
+    position: relative;
+ 
+    padding-right: 500px;
+    padding-left: 20px;
+    padding-top: 20px;
+
+    width: 100%
+ 
+ }
+
+ .ttr-search .fas.fa-search {
+
+    position: absolute;
+ 
+    top: 34px;
+ 
+    left: 37px;
+ 
+ }
+
+ .ttr-search .fas.fa-gear {
+
+    position: absolute;
+
+    top: 34px;
+
+    left: 780px;
+ }
+
+ .ttr-search
+
+ input {
+
+   background-color: #EEEEEE;
+
+   height: 40px;
+
+   padding-left: 40px;
+
+   width: 100%;
+
+   border: none;
+
+   border-radius: 20px;
+
+}
+
+.ttr-gray-border {
+
+    border: 1px lightgrey solid;
+    padding-right: 115px;
+    padding-bottom: 1000px;
+ 
+ }
    
    
