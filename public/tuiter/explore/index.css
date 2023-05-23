@@ -192,9 +192,23 @@ body {
  .featured-event-text {
     z-index: 10;
     color: white;
+    float: unset;
     position: relative;
     bottom: 60px;
     left: 20px;
+    
+ }
+
+ .explore-tuit {
+    float: inline-end;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+
+ .explore-tuit .explore-tuit-trend {
+    color: gray;
+    list-style-type: none;
  }
  
    
