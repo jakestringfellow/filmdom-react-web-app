@@ -155,5 +155,16 @@ body {
     padding-bottom: 1000px;
  
  }
+
+ .grid-row {
+    clear: both;
+    padding-left: 80px;
+ }
+ 
+ .grid-tab {
+    width: 20%;
+    float: left;
+ }
+ 
    
    
