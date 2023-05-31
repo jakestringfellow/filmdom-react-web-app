@@ -12,6 +12,13 @@ import ForLoops from "./for-loops";
 import MapFunction from "./map-function";
 import JSONStringify from "./json-stringify";
 import FindFunction from "./find-function";
+import FindIndex from "./find-index";
+import FilterFunction from "./filter-function";
+import TemplateLiterals from "./template-literals";
+import House from "./house";
+import Spread from "./spread";
+import Destructing from "./destructing";
+import FunctionDestructing from "./function-destructing";
 
 function JavaScript() {
     console.log('Hello World!');
@@ -31,6 +38,13 @@ function JavaScript() {
             <MapFunction/>
             <JSONStringify/>
             <FindFunction/>
+            <FindIndex/>
+            <FilterFunction/>
+            <TemplateLiterals/>
+            <House/>
+            <Spread/>
+            <Destructing/>
+            <FunctionDestructing/>
             
         </div>
     );
