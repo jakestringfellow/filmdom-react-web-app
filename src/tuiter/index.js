@@ -6,6 +6,7 @@ import HomeScreen from "./home-screen";
 import ExploreScreen from "./explore-screen";
 import BookmarksScreen from "./bookmarks-screen";
 import ProfileScreen from "./profile-screen";
+import WhoToFollowList from "./who-to-follow-list";
 
 
 function Tuiter() {
@@ -27,15 +28,7 @@ function Tuiter() {
          </Routes>
        </div>
        <div className="col-3">
-            <WhoToFollowListItem/>
-            <WhoToFollowListItem who={{
-            userName: "Tesla",
-            handle: "tesla",
-            avatarIcon: "tesla.png" }} />
-            <WhoToFollowListItem who={{
-            userName: "SpaceX",
-            handle: "spacex",
-            avatarIcon: "spacex.png", }} />
+            <WhoToFollowList/>
 
        </div>
      </div>
