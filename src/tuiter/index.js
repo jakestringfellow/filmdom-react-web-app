@@ -1,8 +1,11 @@
+import Nav from "../nav";
+
 function Tuiter() {
-    return(
-        <div>
-            <h1>Tuiter</h1>
-        </div>
-    );
+ return (
+   <div>
+     <Nav/>
+     <h1>Tuiter</h1>
+   </div>
+ );
 }
-export default Tuiter;
+export default Tuiter

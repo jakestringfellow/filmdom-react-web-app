@@ -13,7 +13,7 @@ function App() {
           <Route path="/"         element={<Navigate to="/labs"/>}/>
           <Route path="/hello"    element={<HelloWorld/>}/>
           <Route path="/labs/*"   element={<Labs/>}/>
-          <Route path="/tuiter/*" elemnt={<Tuiter/>}/>
+          <Route path="/tuiter/*" element={<Tuiter/>}/>
         </Routes>
     </div>
     </BrowserRouter>
