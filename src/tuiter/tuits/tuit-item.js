@@ -1,9 +1,7 @@
 import React from "react";
 import { BsFillPatchCheckFill } from "react-icons/bs";
-import { FaRegComment, FaRetweet } from "react-icons/fa";
-import { HiOutlineHeart } from "react-icons/hi";
-import { RxShare2 } from "react-icons/rx";
 import "./tuit.css";
+import TuitStats from "./tuit-stats.js";
 
 
 const TuitItem = (
@@ -23,6 +21,7 @@ const TuitItem = (
       "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
     
     }
+    
   }
 ) => {
  return(
@@ -34,12 +33,8 @@ const TuitItem = (
      <div className="col-10">
        <div><b>{homeTuit.userName}</b> <BsFillPatchCheckFill/> {homeTuit.handle} . {homeTuit.time}</div>
        <div>{homeTuit.tuit}</div> <br></br>
-       <div class = "container space-between">
-          <li> <FaRegComment/> {homeTuit.replies} </li>
-          <li><FaRetweet/> {homeTuit.retuits} </li>
-          <li><HiOutlineHeart/> {homeTuit.likes} </li>
-          <li> <RxShare2/> </li>
-       </div>
+       {TuitStats(homeTuit)}
+       
      </div>
    </div>
   </li>
