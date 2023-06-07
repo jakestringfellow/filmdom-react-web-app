@@ -5,11 +5,22 @@ import { MdFormatListBulleted } from "react-icons/md";
 import { BsEmojiSmile } from "react-icons/bs";
 import { TbCalendarStats } from "react-icons/tb";
 import { BiBold, BiItalic } from "react-icons/bi";
+import {createTuit} from "./tuits/tuits-reducer";
+import {useDispatch} from "react-redux";
+
 
 const WhatsHappening = () => {
  let [whatsHappening, setWhatsHappening] = useState('');
+ const dispatch = useDispatch();
+
  const tuitClickHandler = () => {
    console.log(whatsHappening);
+   const newTuit = {
+    tuit: whatsHappening
+  }
+  dispatch(createTuit(newTuit));
+  setWhatsHappening("");
+
  }
  return (
    <div className="row">
