@@ -31,7 +31,7 @@ const TuitItem = (
         <img width={60} className="rounded-circle" src={`/images/${homeTuit.image}`}/>
      </div>
      <div className="col-10">
-       <div><b>{homeTuit.userName}</b> <BsFillPatchCheckFill/> {homeTuit.handle} . {homeTuit.time}</div>
+       <div><b>{homeTuit.userName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> {homeTuit.handle} . {homeTuit.time}</div>
        <div>{homeTuit.tuit}</div> <br></br>
        {TuitStats(homeTuit)}
        
