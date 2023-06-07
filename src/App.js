@@ -7,7 +7,7 @@ import { Navigate } from "react-router";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="container">
         <Routes>
           <Route path="/"         element={<Navigate to="/labs/a3"/>}/>
@@ -16,7 +16,7 @@ function App() {
           <Route path="/tuiter/*" element={<Tuiter/>}/>
         </Routes>
     </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
