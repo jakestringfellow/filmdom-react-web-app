@@ -1,4 +1,10 @@
 import React from "react";
+import { BsFillPatchCheckFill } from "react-icons/bs";
+import { FaRegComment, FaRetweet } from "react-icons/fa";
+import { HiOutlineHeart } from "react-icons/hi";
+import { RxShare2 } from "react-icons/rx";
+import "./tuit.css";
+
 
 const TuitItem = (
   {
@@ -26,8 +32,14 @@ const TuitItem = (
         <img width={60} className="rounded-circle" src={`/images/${homeTuit.image}`}/>
      </div>
      <div className="col-10">
-       <div><b>{homeTuit.userName}</b> <i wd- class="fas fa-check-circle"></i> {homeTuit.handle} . {homeTuit.time}</div>
-       <div>{homeTuit.tuit}</div>
+       <div><b>{homeTuit.userName}</b> <BsFillPatchCheckFill/> {homeTuit.handle} . {homeTuit.time}</div>
+       <div>{homeTuit.tuit}</div> <br></br>
+       <div class = "container space-between">
+          <li> <FaRegComment/> {homeTuit.replies} </li>
+          <li><FaRetweet/> {homeTuit.retuits} </li>
+          <li><HiOutlineHeart/> {homeTuit.likes} </li>
+          <li> <RxShare2/> </li>
+       </div>
      </div>
    </div>
   </li>
