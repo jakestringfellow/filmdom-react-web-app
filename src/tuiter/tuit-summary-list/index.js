@@ -7,7 +7,7 @@ const TuitSummaryList = () => {
  return(
    <ul className="list-group">
      {
-       tuitsArray.map(tuit =>
+       tuits.map(tuit =>
          <TuitSummaryItem
            key={tuit._id} tuit={tuit}/> )
      }
