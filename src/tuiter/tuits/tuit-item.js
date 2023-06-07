@@ -6,7 +6,7 @@ import TuitStats from "./tuit-stats.js";
 
 const TuitItem = (
   {
-    homeTuit = {
+    tuit = {
       "topic": "Space",
       "userName": "SpaceX",
       "time": "2h",
@@ -28,12 +28,12 @@ const TuitItem = (
   <li className="list-group-item">
    <div className="row">
      <div className="col-2">
-        <img width={60} className="rounded-circle" src={`/images/${homeTuit.image}`}/>
+        <img width={60} className="rounded-circle" src={`/images/${tuit.image}`}/>
      </div>
      <div className="col-10">
-       <div><b>{homeTuit.userName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> {homeTuit.handle} . {homeTuit.time}</div>
-       <div>{homeTuit.tuit}</div> <br></br>
-       {TuitStats(homeTuit)}
+       <div><b>{tuit.userName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> {tuit.handle} . {tuit.time}</div>
+       <div>{tuit.tuit}</div> <br></br>
+       {TuitStats(tuit)}
        
      </div>
    </div>

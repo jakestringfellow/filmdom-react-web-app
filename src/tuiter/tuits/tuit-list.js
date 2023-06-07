@@ -3,13 +3,13 @@ import TuitItem from "./tuit-item";
 import { useSelector } from "react-redux";
 
 const TuitList = () => {
-    const { homeTuits } = useSelector(state => state.homeTuits)
+    const { tuits } = useSelector(state => state.tuits)
  return(
    <ul className="list-group">
      {
-       homeTuits.map(homeTuit =>
+       tuits.map(tuit =>
          <TuitItem
-           key={homeTuit._id} homeTuit={homeTuit}/> )
+           key={tuit._id} tuit={tuit}/> )
      }
    </ul>
  );

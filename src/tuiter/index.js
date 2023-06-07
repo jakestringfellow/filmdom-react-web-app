@@ -9,11 +9,11 @@ import ProfileScreen from "./profile-screen";
 import WhoToFollowList from "./who-to-follow-list";
 import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
-import homeTuitsReducer from "./reducers/home-tuits-reducer";
+import homeTuitsReducer from "./tuits/tuits-reducer";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 const store = configureStore(
-    {reducer: {who: whoReducer, tuits: tuitsReducer, homeTuits: homeTuitsReducer }});
+    {reducer: {who: whoReducer, tuits: tuitsReducer, tuits: homeTuitsReducer }});
 
 
 
