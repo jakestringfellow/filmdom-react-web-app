@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import LinkIcons from "./link-icons.js";
+import "./navigation.css";
 const NavigationSidebar = () => {
  const { pathname } = useLocation();
  const [ignore, tuiter, active] = pathname.split("/");
@@ -10,7 +11,7 @@ const NavigationSidebar = () => {
      
      {links.map((link) => 
          <Link to={`/tuiter/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
-           {LinkIcons(link)} {link}
+           {LinkIcons(link)} {<span className="d-none d-xl-block">{link}</span>}
          </Link>
      )}
    </div>

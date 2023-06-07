@@ -37,7 +37,7 @@ function Tuiter() {
                         
                     </Routes>
                 </div>
-            <div className="col-3">
+            <div className="col-3 d-none d-xl-block">
                     <WhoToFollowList/>
 
             </div>
