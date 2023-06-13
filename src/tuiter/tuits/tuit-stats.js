@@ -2,9 +2,13 @@ import React from "react";
 import { FaRegComment, FaRetweet } from "react-icons/fa";
 import { RxShare2 } from "react-icons/rx";
 import TuitLiked from "./tuit-like-condition";
+import { updateTuitThunk } from "../services/tuits-thunks";
+import { useDispatch } from "react-redux";
+
 
 function TuitStats(tuit) {
 
+    const dispatch = useDispatch();
 
 
     return (
