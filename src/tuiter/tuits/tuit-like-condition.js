@@ -11,7 +11,7 @@ function TuitLiked(homeTuit) {
     if(homeTuit.liked) {
       return (<li> <i className="liked-tuit"> 
                 <HiHeart onClick={() =>
-                    dispatchEvent(updateTuitThunk({ ...tuitsReducer, likes: tuitsReducer.likes + 1 }))
+                    dispatchEvent(updateTuitThunk({ ...homeTuit, likes: homeTuit.likes + 1 }))
                 }/>  
               </i>{homeTuit.likes} </li>);
     } else {

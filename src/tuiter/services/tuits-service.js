@@ -13,12 +13,12 @@ export const findTuits  = async ()     => {
 }
 
 export const deleteTuit = async (tid) => {                      // send HTTP DELETE request to server
-    const response = await axios.delete('${TUITS_API}/${tid}')  // append tuit's ID to URL
+    const response = await axios.delete(`${TUITS_API}/${tid}`)  // append tuit's ID to URL
     return response.data                                        // data contains response's status we'll ignore
 }                                                               // for now
 
 export const updateTuit = async (tuit) => {         // service function accepts tuit to send server
     const response = await axios                    // send HTTP PUT request appending tuit's ID
-        .put('${TUITS_API}/${tuit._id', tuit);      // to URL, and embed tuit object in BODY
+        .put(`${TUITS_API}/${tuit._id}`, tuit);      // to URL, and embed tuit object in BODY
     return tuit;                                    // return tuit update to update in reducer's
 }                                                   // state's store
