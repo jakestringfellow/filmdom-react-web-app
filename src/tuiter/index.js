@@ -15,10 +15,11 @@ import ProfileScreen from "./profile-screen";
 import LoginScreen from "./user/Login-screen";
 import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
+import userReducer from "./reducers/auth-reducer";
 
 const store = configureStore(
     {reducer: {who: whoReducer, tuits: tuitsReducer, tuits: homeTuitsReducer,
-                user: authReducer
+                user: userReducer
             },
     });
 

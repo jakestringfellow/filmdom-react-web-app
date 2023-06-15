@@ -1,55 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import { profileThunk, logoutThunk, updateUserThunk }
-  from "../services/auth-thunks";
-import { register } from "../services/auth-service";
-function RegisterScreen() {
- const { currentUser } = useSelector((state) => state.user);
- const [ profile, setProfile ] = useState(currentUser);
- const dispatch = useDispatch();
- const navigate = useNavigate();
- const save = async () => { await dispatch(updateUserThunk(profile)); };
- useEffect(async () => {
-   const loadProfile = async () => {
-     const { payload } = await dispatch(profileThunk());
-     setProfile(payload);
-   };
-   loadProfile();
- }, []);
- return (
-    <div>
-        <h1>Register Screen</h1>
-        {profile && (<div>
+import React ,{ useState } from "react";
+import { useNavigate } from "react-router";                     // to navigate to profile after registration
+import { useDispatch } from "react-redux";                      // to invoke thunks
+import { registerThunk } from "../services/auth-thunks";           // to send login HTTP request to server
+
+function RegisterScreen() {                                        
+    const [username, setUsername] = useState("");               // to type username
+    const [password, setPassword] = useState("");               // to type password
+    const navigate = useNavigate();                             // to navigate to profile
+    const dispatch = useDispatch();                             // to invoke thunks
+    const handleRegister = async () => {                        // handles Register button click
+        try {
+            await dispatch(registerThunk({ username, password })); // send credentials to login controller
+            navigate("/tuiter/profile");                               // if successful, navigate to profile
+        } catch (e) {
+            alert(e);                                           // if not show error
+        }
+    };
+    return ( 
         <div>
-        <label>First Name</label>
-        <input type="text" value={profile.firstName}
-            onChange={(event) => {
-            const newProfile = {
-            ...profile, firstName: event.target.value,
-            };
-            setProfile(newProfile);
-            }}/>
+            <h1> Register Screen </h1>                                                 
+            <div className="mt-2">
+                <label>Username</label>
+                <input className="form-control" type="text" value={username}
+                onChange={(event) => setUsername(event.target.value)}/>
+            </div>
+            <div className="mt-2">
+                <label>Password</label>
+                <input className="form-control" type="password" value={password}
+                onChange={(event) => setPassword(event.target.value)}/>
+            </div>
+            <button className="btn btn-primary mt-2"
+                    onClick={handleRegister}>
+                Register
+            </button>
         </div>
-        <div>
-        <label>Last Name</label>
-        <input type="text" value={profile.lastName}
-            onChange={(event) => {
-            const newProfile = {
-            ...profile, lastName: event.target.value,
-            };
-            setProfile(newProfile);
-            }}/>
-        </div></div>
-        )}
-        <button
-        onClick={() => {
-        dispatch(logoutThunk());
-        navigate("/login");
-        }}>                   Logout</button>
-        <button onClick={save}>Save  </button>
-    </div> 
-  ); 
+    );
 }
 export default RegisterScreen;
-

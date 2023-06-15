@@ -11,7 +11,7 @@ function LoginScreen() {
     const handleLogin = async () => {                           // handles Login button click
         try {
             await dispatch(loginThunk({ username, password })); // send credentials to login controller
-            navigate("/profile");                               // if successful, navigate to profile
+            navigate("/tuiter/profile");                               // if successful, navigate to profile
         } catch (e) {
             alert(e);                                           // if not show error
         }
