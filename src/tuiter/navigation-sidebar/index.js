@@ -11,11 +11,17 @@ const NavigationSidebar = () => {
  return (
    <div className="list-group">
      
-     {links.map((link) => 
-         <Link to={`/tuiter/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
-           {LinkIcons(link)} {<span className="d-none d-xl-block">{link}</span>}
-         </Link>
-     )}
+     <div className="row">
+        
+            {links.map((link) => 
+            
+            <Link to={`/tuiter/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
+              {LinkIcons(link)} {<span className="d-none d-xl-inline ">{link}</span>}
+            </Link>
+            )}
+        
+        
+     </div>
      {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
      {!currentUser && <Link className="list-group" to="/tuiter/register">   Register   </Link>}
      { currentUser && <Link className="list-group" to="/tuiter/profile">   Profile   </Link>}
