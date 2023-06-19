@@ -35,7 +35,7 @@ const TuitItem = ( {
             <b>{tuit.userName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> {tuit.handle} . {tuit.time}
         </div>
        <div>{tuit.tuit}</div> <br></br>
-       {TuitStats(tuit)}
+       <TuitStats tuit={tuit}/>
        
      </div>
    </div>

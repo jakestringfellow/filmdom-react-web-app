@@ -12,8 +12,12 @@
     list-style: none;
   }
 
-  .liked-tuit {
+  .tuit-like {
     color: #ea3838;
+   }
+
+  .likes {
+    color: #202020
   }
 
   .verified-check {
