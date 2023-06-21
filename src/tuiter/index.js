@@ -42,7 +42,6 @@ function Tuiter() {
                         <Route path="/explore" element={<ExploreScreen/>} />
                         <Route path="/bookmarks" element={<BookmarksScreen/>} />
                         <Route path="/profile" element={
-                            // Protect from unregistered users
                             <ProtectedRoute>
                                 <ProfileScreen />
                             </ProtectedRoute>
