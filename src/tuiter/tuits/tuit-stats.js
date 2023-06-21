@@ -6,6 +6,7 @@ import { updateTuitThunk } from "../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import {Link} from "react-router-dom";
+import "./tuit.css";
 
 
 const TuitStats = ({tuit}) => {

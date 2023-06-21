@@ -18,7 +18,21 @@
 
   .likes {
     color: #202020
+
   }
+
+  a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+
 
   .verified-check {
     color: #5de1ff
