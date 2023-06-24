@@ -16,7 +16,7 @@ export const logout = async () => {
 };
 
 export const profile = async () => {
-    const response = await request.get(`${USERS_URL}/profile`);//await api.post(`${USERS_URL}/profile`);
+    const response = await api.get(`${USERS_URL}/profile`);//await api.post(`${USERS_URL}/profile`);
     return response;
 };
 

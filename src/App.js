@@ -9,7 +9,7 @@ import AuthContext from "./tuiter/user/auth-context";
 function App() {
   return (
     <HashRouter>
-      <AuthContext>
+      {/* <AuthContext> */}
           <div className="container">
             <Routes>
               <Route path="/"         element={<Navigate to="/labs/a3"/>}/>
@@ -18,7 +18,7 @@ function App() {
               <Route path="/tuiter/*" element={<Tuiter/>}/>
             </Routes>
           </div>
-      </AuthContext>
+      {/* </AuthContext> */}
     </HashRouter>
   );
 }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { profileThunk } from "./services/auth-thunks";
-import { useSelector } from "react-redux";
 // import { Navigate } from "react-router";
 
 function ProtectedRoute({children}) {
