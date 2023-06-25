@@ -6,7 +6,7 @@ import "./navigation.css";
 const NavigationSidebar = () => {
  const { pathname } = useLocation();
  const [ignore, tuiter, active] = pathname.split("/");
- const { currentUser } = useSelector((state) => state.user);
+ const { currentUser } = useSelector((state) => state.users);
  const links = ["home",     "explore",   "notifications", "messages", "bookmarks", "lists", "profile",  "more"];
  return (
    <div className="list-group">

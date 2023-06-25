@@ -4,16 +4,19 @@ import { useDispatch } from "react-redux";                      // to invoke thu
 import { loginThunk } from "../services/auth-thunks";           // to send login HTTP request to server
 
 function LoginScreen() {                                        
-    const [username, setUsername] = useState("");               // to type username
-    const [password, setPassword] = useState("");               // to type password
+    const [username, setUsername] = useState({});               // to type username
+    const [password, setPassword] = useState({});               // to type password
+
+    // const [user, setUser] = useState({});   // new
+ 
     const navigate = useNavigate();                             // to navigate to profile
     const dispatch = useDispatch();                             // to invoke thunks
     const handleLogin = async () => {                           // handles Login button click
         try {
             await dispatch(loginThunk({ username, password })); // send credentials to login controller
-            navigate("/tuiter/profile");                               // if successful, navigate to profile
+            navigate("/project/profile");                               // if successful, navigate to profile
         } catch (e) {
-            alert(e);                                           // if not show error
+            console.error(e);                                           // if not show error
         }
     };
     return ( 
@@ -22,12 +25,12 @@ function LoginScreen() {
             <div className="mt-2">
                 <label>Username</label>
                 <input className="form-control" type="text" value={username}
-                onChange={(event) => setUsername(event.target.value)}/>
+                onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="mt-2">
                 <label>Password</label>
                 <input className="form-control" type="password" value={password}
-                onChange={(event) => setPassword(event.target.value)}/>
+                onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <button className="btn btn-primary mt-2"
                     onClick={handleLogin}>
