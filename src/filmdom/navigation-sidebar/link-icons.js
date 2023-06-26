@@ -1,12 +1,12 @@
-import { FaHome, FaHashtag, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEllipsisH } from "react-icons/fa";
-
+import { FaHome, FaSearch, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEllipsisH } from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
 
 function LinkIcons(link) {
     if(link === "home") {
-        return (<i> <FaHome/>  </i>);
+        return (<i> <AiFillHome/>  </i>);
     } 
-    else if (link === "explore") {
-        return (<i> <FaHashtag/>  </i>);
+    else if (link === "search") {
+        return (<i> <FaSearch/>  </i>);
     }
     else if (link === "notifications") {
         return (<i> <FaBell/>  </i>);
