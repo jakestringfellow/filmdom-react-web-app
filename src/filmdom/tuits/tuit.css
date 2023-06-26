@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+  }
+  .container.space-around {
+    justify-content: space-around;
+  }
+  .container.space-between {  
+    justify-content: space-between;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .tuit-like {
+    color: #ea3838;
+   }
+
+  .likes {
+    color: #202020
+
+  }
+
+  a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+
+
+  .verified-check {
+    color: #5de1ff
+  }
+
+ 
+
+
+ 

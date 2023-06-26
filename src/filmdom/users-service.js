@@ -10,22 +10,22 @@ const request = axios.create({
 });
 
 export const login = async (user) => {
-  const response = await request.post(`${BASE_API}/api/login`, user);
+  const response = await request.post(`${BASE_API}/api/users/login`, user);
   return response.data;
 };
 
 export const register = async (user) => {
-  const response = await request.post(`${BASE_API}/api/register`, user);
+  const response = await request.post(`${BASE_API}/api/users/register`, user);
   return response.data;
 };
 
 export const logout = async () => {
-  const response = await request.post(`${BASE_API}/api/logout`);
+  const response = await request.post(`${BASE_API}/api/users/logout`);
   return response.data;
 };
 
 export const getProfile = async () => {
-  const response = await request.get(`${BASE_API}/api/profile`);
+  const response = await request.get(`${BASE_API}/api/users/profile`);
   return response.data;
 };
 

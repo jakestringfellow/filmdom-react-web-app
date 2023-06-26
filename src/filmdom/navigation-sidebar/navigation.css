@@ -44,5 +44,10 @@ span {
 .filmdom-header-icon { 
     font-size: 3.83em;
     padding-left: 10px;
-    color: rgb(222, 217, 217)
+    color: rgb(222, 217, 217);
+}
+
+.pos-fixed {
+    top: 0px;
+    left: 0px;
 }

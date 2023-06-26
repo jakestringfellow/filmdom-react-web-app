@@ -13,7 +13,7 @@ const NavigationSidebar = () => {
     const links = ["home",     "search",   "details", "login", "register",  "profile"];
 
     return (
-        <div>
+        <div class="sticky-top">
             <li>
                 <i className="filmdom-header-icon"><BiCameraMovie/></i>
                 <text className="filmdom-header d-none d-xl-inline">

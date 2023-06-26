@@ -4,17 +4,25 @@ import { useNavigate } from "react-router";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
 
 function ProfileScreen() {
+    const { currentUser } = useSelector((state) => state.users);
+    const [ profile, setProfile ] = useState(currentUser);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { currentUser } = useSelector((state) => state.users);
-    const [ profile, setProfile ] = useState(currentUser);
-    
-    const save = async () => { await dispatch(updateUserThunk(profile)); };
     const handleLogout = () => {
       dispatch(logoutThunk());
       navigate("/filmdom/search");
     };
+    
+    const save = async () => { 
+      try {
+        await dispatch(updateUserThunk(profile));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    
 
     useEffect(() => {
         const loadProfile = async () => {
@@ -59,9 +67,12 @@ function ProfileScreen() {
           />
            </div></div>
          )}
-         <button
-          onClick={handleLogout}> Logout</button>
-         <button onClick={save}>Save  </button>
+         <button onClick={handleLogout}> 
+          Logout
+         </button>
+         <button onClick={save}>
+          Save  
+         </button>
         </div> ); 
 }
 export default ProfileScreen;

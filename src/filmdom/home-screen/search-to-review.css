@@ -1,0 +1,49 @@
+.user-icon {
+    font-size: 30px;
+    padding-top: 30px;
+    color: rgb(166, 166, 166);
+    /* position: sticky; */
+    padding-top: 10px;
+    display:inline-block;
+}
+
+.search-button {
+    background-color: #404040;
+    border-color: black;
+    flex-wrap: nowrap;
+    position: sticky;
+}
+
+.form-control:focus {
+    border-color:rgb(211, 191, 72);
+    outline-color: rgb(211, 191, 72);
+    accent-color: rgb(211,191,72);
+    caret-color: darkgoldenrod;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 200, 0, 0.6);
+}
+
+.search-box {
+    flex-wrap: nowrap;
+    width: 90%;
+    top:  10px;
+    position: sticky;
+}
+
+.search-header {
+    font-size: 20;
+    position: sticky;
+}
+
+.wd-nudge-up {
+    bottom: 3px;
+    left: 25px;
+ }
+
+.input {
+    background-color: rgb(166, 166, 166);
+}
+
+ .btn:hover {
+    background-color: rgb(211, 191, 72);
+    border-color: black;
+ }

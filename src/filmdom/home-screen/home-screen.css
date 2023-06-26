@@ -24,3 +24,11 @@
     top: 4px;
  }
  
+ .home-header {
+   color:rgb(222, 217, 217);
+   padding-top: 32px;
+   padding-left: 30px;
+   padding-bottom: 15px;;
+   font-size: 1.90em;
+   font-weight: 700;
+}

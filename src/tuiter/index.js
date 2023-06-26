@@ -18,17 +18,17 @@ import authReducer from "./reducers/auth-reducer";
 import userReducer from "./reducers/auth-reducer";
 import ProtectedRoute from "./protected-route";
 
-const store = configureStore(
-    {reducer: {who: whoReducer, tuits: tuitsReducer, tuits: homeTuitsReducer,
-                users: userReducer
-            },
-    });
+ const store = configureStore(
+     {reducer: {who: whoReducer, tuits: tuitsReducer, tuits: homeTuitsReducer,
+                 users: userReducer
+             },
+     });
 
 
 
 function Tuiter() {
  return (
-    <Provider store = {store}>
+    // <Provider store = {store}>
 
         <div>
             <Nav/>
@@ -60,7 +60,7 @@ function Tuiter() {
             </div>
         </div>
 
-    </Provider>
+    // </Provider>
    
  );
 }
