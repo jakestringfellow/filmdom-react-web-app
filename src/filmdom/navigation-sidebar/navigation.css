@@ -12,11 +12,26 @@ span {
 }
 
 .list-group-item {
-    color:rgb(174, 174, 174);
-    background-color: rgb(50, 50, 50);
-    font-size: 20px;
+    color:rgb(222, 217, 217);
+    background-color: rgb(24, 24, 24);
+
+    font-size: 26px;
     justify-content: space-between;
+    border: none;
 }
+
+.selected-link {
+    color:rgb(211, 72, 72)
+}
+
+.list-group-item:hover {
+    color: rgb(211, 191, 72)
+}
+
+.nav-link.active {
+    color: red;
+}
+
 
 .filmdom-header {
     flex-direction: 'row';

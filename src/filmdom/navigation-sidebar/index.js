@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux"
 import "./navigation.css";
 import {BiCameraMovie} from "react-icons/bi";
@@ -8,7 +8,7 @@ import LinkIcons from "./link-icons";
 
 const NavigationSidebar = () => {
     const { pathname } = useLocation();
-    const [active] = pathname.split("/");
+    const [ignore, filmdom, active] = pathname.split("/");
     const { currentUser } = useSelector((state) => state.users);
     const links = ["home",     "search",   "details", "login", "register",  "profile"];
 
@@ -25,9 +25,12 @@ const NavigationSidebar = () => {
             <div className="row">
                 {links.map((link) => 
                 
-                <Link to={`/filmdom/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
+                <NavLink to={`/filmdom/${link}`} style={({ isActive }) => ({
+                    //color: isActive ? '#fff' : '#545e6f',
+                    background: isActive ? '#404040' : '#181818',
+                  })} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
                 {LinkIcons(link)} {<span className="d-none d-xl-inline ">{link}</span>}
-                </Link>
+                </NavLink>
                 )}
             </div>
             {/* <Link to='home' className="list-group-item list-group-item-action d-none d-xl-inline">Home</Link>
