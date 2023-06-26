@@ -14,7 +14,7 @@ function LoginScreen() {
     const handleLogin = async () => {                           // handles Login button click
         try {
             await dispatch(loginThunk({ username, password })); // send credentials to login controller
-            navigate("/project/profile");                               // if successful, navigate to profile
+            navigate("/filmdom/profile");                               // if successful, navigate to profile
         } catch (e) {
             console.error(e);                                           // if not show error
         }

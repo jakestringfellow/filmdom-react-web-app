@@ -4,14 +4,16 @@ import { useNavigate } from "react-router";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
 
 function ProfileScreen() {
-    const { currentUser } = useSelector((state) => state.users);
-    const [ profile, setProfile ] = useState(currentUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const { currentUser } = useSelector((state) => state.users);
+    const [ profile, setProfile ] = useState(currentUser);
+    
     const save = async () => { await dispatch(updateUserThunk(profile)); };
     const handleLogout = () => {
       dispatch(logoutThunk());
-      navigate("/project/search");
+      navigate("/filmdom/search");
     };
 
     useEffect(() => {
@@ -21,7 +23,7 @@ function ProfileScreen() {
             setProfile(payload);
           } catch (error) {
             console.error(error);
-            navigate("/project/search");
+            navigate("/filmdom/search");
           }
         };
         loadProfile();

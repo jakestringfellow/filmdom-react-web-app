@@ -5,7 +5,7 @@ import { HashRouter } from "react-router-dom";
 import {Routes, Route} from "react-router";
 import { Navigate } from "react-router";
 import AuthContext from "./tuiter/user/auth-context";
-import Project from "./project";
+import Project from "./filmdom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
@@ -16,11 +16,11 @@ function App() {
       {/* <AuthContext> */}
           <div className="container-fluid">
             <Routes>
-              <Route path="/"         element={<Navigate to="/project"/>}/>
+              <Route path="/"         element={<Navigate to="/filmdom/home"/>}/>
               <Route path="/hello"    element={<HelloWorld/>}/>
               <Route path="/labs/*"   element={<Labs/>}/>
               <Route path="/tuiter/*" element={<Tuiter/>}/>
-              <Route path="/project/*" element ={<Project/>}/>
+              <Route path="/filmdom/*" element ={<Project/>}/>
             </Routes>
           </div>
       {/* </AuthContext> */}

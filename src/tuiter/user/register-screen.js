@@ -11,7 +11,7 @@ function RegisterScreen() {
     const handleRegister = async () => {                        // handles Register button click
         try {
             await dispatch(registerThunk({ username, password })); // send credentials to login controller
-            navigate("/project/profile");                               // if successful, navigate to profile
+            navigate("/filmdom/profile");                               // if successful, navigate to profile
         } catch (e) {
             alert(e);                                           // if not show error
         }

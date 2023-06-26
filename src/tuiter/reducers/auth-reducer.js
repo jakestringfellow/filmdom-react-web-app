@@ -10,7 +10,7 @@ const initialState = {
   };
 
 const userSlice = createSlice({
-    name: "auth",
+    name: "users",
     initialState,
     extraReducers: {
         [logoutThunk.fulfilled]: (state, action) => {

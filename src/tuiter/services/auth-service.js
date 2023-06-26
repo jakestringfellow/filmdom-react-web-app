@@ -15,6 +15,11 @@ export const login = async ({ username, password }) => {                        
     return user;
 };
 
+export const getUsers = async () => {
+    const response = await axios.get(USER_API);
+    return response.data;
+  };
+
 export const logout = async () => {
     const response = await api.post(`${USER_API}/logout`);
     return response.data;

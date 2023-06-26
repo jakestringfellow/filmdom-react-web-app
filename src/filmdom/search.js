@@ -22,7 +22,7 @@ function SearchScreen() {
         <div>
             <h1>Search Screen</h1>
             <button className="w-25 float-end btn btn-primary"
-                onClick={() => navigate(`/project/search/${query}`)}>
+                onClick={() => navigate(`/filmdom/search/${query}`)}>
                     Search
                 </button>
             <input type="text" 
@@ -35,7 +35,7 @@ function SearchScreen() {
                     results.Search.map((movie) => (
                         <li className="list-group-item" key={movie.imbdID}>
                           <h2> 
-                            <Link to={`/project/details/${movie.imdbID}`}>{movie.Title}</Link>
+                            <Link to={`/filmdom/details/${movie.imdbID}`}>{movie.Title}</Link>
                           </h2>
                           <img src={movie.Poster} />
                            

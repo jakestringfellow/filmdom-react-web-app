@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginThunk } from "./users-thunks";
+import { registerThunk } from "./users-thunks";
 import { useNavigate } from "react-router";
-const LoginScreen = () => {
+const RegisterScreen = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     try {
-      await dispatch(loginThunk(user));
-      navigate("/project/profile");
+      await dispatch(registerThunk(user));
+      navigate("/filmdom/profile");
     } catch (error) {
       console.error(error);
     }
   };
   return (
     <div>
-      <h1>Login</h1>
+      <h1>Register</h1>
       <input
         placeholder="Username"
         className="form-control"
@@ -30,12 +30,12 @@ const LoginScreen = () => {
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       />
-      <button onClick={handleLogin} className="btn btn-primary">
-        Login
+      <button onClick={handleRegister} className="btn btn-primary">
+        Register
       </button>
     </div>
   );
 };
-export default LoginScreen;
+export default RegisterScreen;
 export const qwe = 123;
 export const asd = 456;

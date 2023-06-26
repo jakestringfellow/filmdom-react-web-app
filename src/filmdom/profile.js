@@ -15,7 +15,7 @@ function ProfileScreen() {
 
   const handleLogout = () => {
     dispatch(logoutThunk());
-    navigate("/project/search");
+    navigate("/filmdom/search");
   };
 
   const handleUpdate = async () => {
@@ -39,7 +39,7 @@ function ProfileScreen() {
         setProfile(payload);
       } catch (error) {
         console.error(error);
-        navigate("/project/search");
+        navigate("/filmdom/search");
       }
     };
     const fetchMyTuits = async () => {

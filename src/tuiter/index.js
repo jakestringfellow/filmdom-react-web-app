@@ -20,7 +20,7 @@ import ProtectedRoute from "./protected-route";
 
 const store = configureStore(
     {reducer: {who: whoReducer, tuits: tuitsReducer, tuits: homeTuitsReducer,
-                user: userReducer
+                users: userReducer
             },
     });
 
