@@ -25,14 +25,15 @@ const ReviewItem = ( {
   
   <li className="list-group-item">
    <div className="row">
-     {/* <div className="col-2">
-        <img width={60} className="rounded-circle" src={`/images/${tuit.image}`}/>
-     </div> */}
+     <div className="col-2">
+        <b>{review.movie.title}</b>
+        <img width={60} className="" src={review.movie.image}/>
+     </div>
      <div className="col-10">
        <div>
             {/* <i className="bi bi-x-lg float-end"
               onClick={() => deleteTuitHandler(tuit._id)}> <TiDelete/> </i> */}
-            <b>{review.username}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> {review.handle} . {review.time}
+            <b>{review.user.firstName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> @{review.user.username} . {review.time}
         </div>
        <div>{review.review}</div> <br></br>
        {/* <TuitStats review={review}/> */}

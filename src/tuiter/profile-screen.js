@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
 import { current } from "@reduxjs/toolkit";
 import * as omdbService from "../filmdom/omdb-service.js";
+import ReviewItem from "../filmdom/reviews/review-item.js";
+
 
 function ProfileScreen() {
 
@@ -202,11 +204,13 @@ function ProfileScreen() {
             {
               myReviews && 
                 myReviews.map((review) => (
-                  <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
-                  <h4>{review.movie.title}</h4>
-                  
-                  <li>{review.review}</li>
-                  </Link>
+
+                  <ReviewItem review={review}/>
+                  // <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
+                  // <h4>{review.movie.title}</h4>
+
+                  // <li>{review.review}</li>
+                  // </Link>
                   
                 ))
             }

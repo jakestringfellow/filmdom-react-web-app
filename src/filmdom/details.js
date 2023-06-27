@@ -23,7 +23,8 @@ function DetailsScreen() {
             title: movieDetails.Title,
             imdbId: movieDetails.imdbID,
             released: movieDetails.Released,
-            genre: movieDetails.Genre
+            genre: movieDetails.Genre,
+            image: movieDetails.Poster
         }, reviewText)
         // {}
         //     review: reviewText
