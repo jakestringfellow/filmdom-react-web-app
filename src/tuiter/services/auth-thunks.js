@@ -7,35 +7,34 @@ export const getUsersThunk = createAsyncThunk("users/getUsers", async () => {
   });
 
 export const loginThunk = createAsyncThunk(
-    "users/login", async (username, password) => {
-        const user = await authService.login(username, password);
-        return user;
-    }
-);
+    "users/login", async (user) => { //(username, password) => {
+        const currentUser = await authService.login(user);//(username, password);
+        return currentUser;
+    });
 
 export const profileThunk = createAsyncThunk(
     "users/profile", async () => {
-        const response = await authService.profile();
-        return response.data;
+        const currentUser = await authService.profile();
+        return currentUser;
     }
 );
 
 export const logoutThunk = createAsyncThunk(
-    "auths/logout", async () => {
+    "users/logout", async () => {
         return await authService.logout();
     }
 );
 
 export const updateUserThunk = createAsyncThunk(
-    "users/updateUser", async (user) => {
+    "user/updateUser", async (user) => {
         await authService.updateUser(user);
         return user;
     }
 );
 
 export const registerThunk = createAsyncThunk(
-    "auth/registerUser", async (username, password) => {
-        const user = await authService.register(username, password);
-        return user;
+    "users/register", async (user) => {//(username, password) => {
+        const currentUser = await authService.register(user);//username, password);
+        return currentUser;
     }
 )

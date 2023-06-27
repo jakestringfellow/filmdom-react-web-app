@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const KEY = process.env.REACT_APP_OMDB_API_KEY;
 const OMDB_API = "http://www.omdbapi.com";
+// localhost:4000/api
+const BASE_API = "http://localhost:4000/api";//process.env.REACT_APP_API_BASE;
 
 export const fullTextSearch = async (text) => {
     const response = await axios.get(
@@ -23,6 +25,14 @@ export const getMovieDetails = async (imdbID) => {
         `${OMDB_API}/?apikey=${KEY}&i=${imdbID}&season=${seasonNumber}`
      );
     return response.data.Episodes;
+ }
+
+ export const likeMovie = async (movieId, movie) => {
+    const response = await axios.post(
+        `${BASE_API}/movies/movieId/${movieId}/like`,
+        movie
+    );
+    return response.data
  }
 // export const getSeasonDetails = async () => {
 //     const response = await

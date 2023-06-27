@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
+import { current } from "@reduxjs/toolkit";
 
 function ProfileScreen() {
-    const { currentUser } = useSelector((state) => state.users);
-    const [ profile, setProfile ] = useState(currentUser);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+
+
+
 
     const handleLogout = () => {
       dispatch(logoutThunk());
@@ -22,27 +25,31 @@ function ProfileScreen() {
         console.error(error);
       }
     };
+
+    const { currentUser } = useSelector((state) => state.users);
+    const [ profile, setProfile ] = useState(currentUser);
     
 
     useEffect(() => {
         const loadProfile = async () => {
-          try {
+          //try {
+            console.log(currentUser);
             const { payload } = await dispatch(profileThunk());
             setProfile(payload);
-          } catch (error) {
-            console.error(error);
-            navigate("/filmdom/search");
-          }
+          //} catch (error) {
+            //console.error(error);
+            //navigate("/filmdom/search");
+          //}
         };
         loadProfile();
     }, []);
     return (
         <div>
          <h1>Profile Screen</h1>
-         {profile && (<div>
-           <div>
+         {profile && (//<div>
+            <> 
             <label>Username</label>
-            <input className="form-control" value={profile.username} readOnly />
+            <input className="form-control" value={profile.username || ""} readOnly />
             <label>Password</label>
             <input
               className="form-control"
@@ -52,27 +59,43 @@ function ProfileScreen() {
             <label>First Name</label>
             <input
             className="form-control"
+            type="text"
             value={profile.firstName}
-            onChange={(e) =>
-              setProfile({ ...profile, firstName: e.target.value })
+            onChange={(event) => {
+              const newProfile = {
+                ...profile,
+                firstName: event.target.value,
+              };
+              setProfile(newProfile);
+            }
+              //setProfile({ ...profile, firstName: event.target.value })
             }
           />
             <label>Last Name</label>
           <input
             className="form-control"
-            value={profile.lastName}
-            onChange={(e) =>
-              setProfile({ ...profile, lastName: e.target.value })
+            type="text"
+            value={profile.lastName || ""}
+            onChange={(event) => {
+              const newProfile = {
+                ...profile,
+                lastName: event.target.value,
+              };
+              setProfile(newProfile);
+            }
+              //setProfile({ ...profile, lastName: e.target.value })
             }
           />
-           </div></div>
+          </>
+           //</div></div>
          )}
-         <button onClick={handleLogout}> 
+         <button onClick={handleLogout} className="btn btn-danger"> 
           Logout
          </button>
-         <button onClick={save}>
+         <button onClick={save} className="btn btn-primary">
           Save  
          </button>
-        </div> ); 
+        </div> 
+    ); 
 }
 export default ProfileScreen;

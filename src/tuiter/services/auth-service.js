@@ -9,10 +9,10 @@ const BASE_API = "http://localhost:4000";
 
 const api = axios.create({ withCredentials: true });                                // configure axios to support cookies
                                                                                     // for passing credentials
-export const login = async ({ username, password }) => {                            // implement login service function
-    const response = await api.post(`${USER_API}/login`, { username, password });
-    const user = response.data;
-    return user;
+export const login = async ( user) => {//{username, password }) => {                            // implement login service function
+    const response = await api.post(`${USER_API}/login`, user);//{ username, password });
+    //const user = response.data;
+    return response.data;//user;
 };
 
 export const getUsers = async () => {
@@ -26,8 +26,9 @@ export const logout = async () => {
 };
 
 export const profile = async () => {
-    const response = await api.get(`${USER_API}/profile`);//await api.post(`${USERS_URL}/profile`);
-    return response;
+    const response = await api.post(`${USER_API}/profile`);//await api.post(`${USERS_URL}/profile`);
+    console.log(response.data);
+    return response.data;
 };
 
 export const updateUser = async (user) => {
@@ -35,9 +36,9 @@ export const updateUser = async (user) => {
     return response.data;
 };
 
-export const register = async ({ username, password }) => {
+export const register = async (user) => {//{ username, password }) => {
     console.log(USER_API)
-    const response = await api.post(`${USER_API}/register`, { username, password });
-    const user = response.data;
-    return user;
+    const response = await api.post(`${USER_API}/register`, user)//{ username, password });
+    const currentUser = response.data;
+    return currentUser;
  }
