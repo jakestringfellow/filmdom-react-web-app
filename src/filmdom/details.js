@@ -18,7 +18,7 @@ function DetailsScreen() {
     const handleLikeMovie = async () => {
         const movie = await service.likeMovie(id, {
             title: movieDetails.Title,
-            imbdId: movieDetails.imbdId,
+            imdbId: movieDetails.imdbID,
             released: movieDetails.Released,
             genre: movieDetails.Genre
         })

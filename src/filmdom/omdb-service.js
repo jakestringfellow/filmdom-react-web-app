@@ -1,5 +1,9 @@
 import axios from "axios";
 
+const request = axios.create({
+    withCredentials: true,
+});
+
 export const KEY = process.env.REACT_APP_OMDB_API_KEY;
 const OMDB_API = "http://www.omdbapi.com";
 // localhost:4000/api
@@ -28,11 +32,17 @@ export const getMovieDetails = async (imdbID) => {
  }
 
  export const likeMovie = async (movieId, movie) => {
-    const response = await axios.post(
+    const response = await request.post(
         `${BASE_API}/movies/movieId/${movieId}/like`,
         movie
     );
     return response.data
+ }
+
+ export const findMoviesILike = async () => {
+    const response = await request.get(
+        `http://localhost:4000/api/movies/i/like`);
+    return response.data;
  }
 // export const getSeasonDetails = async () => {
 //     const response = await

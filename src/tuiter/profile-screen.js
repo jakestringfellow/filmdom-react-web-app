@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
 import { current } from "@reduxjs/toolkit";
+import * as omdbService from "../filmdom/omdb-service.js";
 
 function ProfileScreen() {
 
@@ -26,11 +27,17 @@ function ProfileScreen() {
       }
     };
 
+    const fetchMyLikes = async () => {
+      const movies = await omdbService.findMoviesILike();
+      setMoviesILike(movies);
+    };
+
     const { currentUser } = useSelector((state) => state.users);
     const [ profile, setProfile ] = useState(currentUser);
-    
+    const [moviesILike, setMoviesILike] = useState([]);
 
     useEffect(() => {
+        fetchMyLikes();
         const loadProfile = async () => {
           //try {
             console.log(currentUser);
@@ -95,6 +102,7 @@ function ProfileScreen() {
          <button onClick={save} className="btn btn-primary">
           Save  
          </button>
+         <pre>{JSON.stringify(moviesILike, null, 2)}</pre>
         </div> 
     ); 
 }
