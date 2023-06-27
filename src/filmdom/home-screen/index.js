@@ -11,7 +11,7 @@ function HomeScreen() {
      <li className="home-header">Home</li>
      <SearchScreen/>
      {/* <SearchToReview/> */}
-     <ReviewList/>
+     {/* <ReviewList/> */}
    </>
  );
 };

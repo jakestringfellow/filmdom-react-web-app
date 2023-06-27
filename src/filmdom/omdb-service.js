@@ -114,6 +114,13 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
     return response.data;
  } 
 
+ export const findMovieById = async (id) => {
+    const response = await axios.get(
+        `http://localhost:4000/api/movies/${id}`
+    );
+    return response.data;
+ }
+
 // export const getSeasonDetails = async () => {
 //     const response = await
 // }

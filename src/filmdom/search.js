@@ -51,6 +51,7 @@ function SearchScreen() {
                             <Link to={`/filmdom/details/${movie.imdbID}`}>{movie.Title}</Link>
                           </h2>
                           <img src={movie.Poster} />
+                          {/* <pre>{JSON.stringify(movie,null,2)}</pre> */}
                            
                         </li>
                     ))}

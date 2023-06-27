@@ -43,15 +43,36 @@ function ProfileScreen() {
       setPeopleWhoFollowMe(people);
     };
 
+    const fetchMyReviews = async () => {
+      const reviews = await omdbService.findMyReviews();
+      setMyReviews(reviews);
+    }
+
+    async function findMovieById(id) {
+      const movie = await omdbService.findMovieById(id);
+      return (movie);
+    }
+
+    // const fetchReviewMovies = async () => {
+    //   const reviewMovies = omdbService.findMovieById(id);
+    // }
+
+    // const findMovieById = async () => {
+    //   const movie = await omdbService.findMovieById(id);
+    // }
+
     const { currentUser } = useSelector((state) => state.users);
     const [ profile, setProfile ] = useState(currentUser);
     const [moviesILike, setMoviesILike] = useState([]);
     const [peopleIFollow, setPeopleIFollow] = useState([]);
     const [peopleWhoFollowMe, setPeopleWhoFollowMe] = useState([]);
+    const [myReviews, setMyReviews] = useState([]);
+    // const [reviewedMovies, setReviewedMovies] = useState([]);
     
     useEffect(() => {
         fetchPeopleWhoFollowMe();
         fetchPeopleIFollow();
+        fetchMyReviews();
 
         fetchMyLikes();
         const loadProfile = async () => {
@@ -174,7 +195,27 @@ function ProfileScreen() {
          </>
         )}
 
-         <pre>{JSON.stringify(moviesILike, null, 2)}</pre>
+        {myReviews && (
+          <>
+          <h3>Reviewed Movies: </h3>
+          <div className="list-group">
+            {
+              myReviews && 
+                myReviews.map((review) => (
+                  <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
+                  <h4>{review.movie.title}</h4>
+                  
+                  <li>{review.review}</li>
+                  </Link>
+                  
+                ))
+            }
+            
+          </div>
+          </>
+        )}
+         <pre>{JSON.stringify(myReviews, null, 2)}</pre>
+         {/* <pre>{JSON.stringify(moviesILike, null, 2)}</pre> */}
         </div> 
     ); 
 }
