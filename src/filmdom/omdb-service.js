@@ -66,9 +66,9 @@ export const getMovieDetails = async (imdbID) => {
     return response.data;
  };
 
- export const findPeopleThatFollowMe = async () => {
+ export const findPeopleWhoFollowMe = async () => {
     const response = await request.get(
-        `http://localhost:4000/api/follows/followed/me`
+        `http://localhost:4000/api/follows/i/followed/me`
     );
     return response.data;
  }

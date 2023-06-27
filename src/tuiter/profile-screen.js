@@ -38,20 +38,22 @@ function ProfileScreen() {
       setPeopleIFollow(people);
     }
 
-    const fetchPeopleThatFollowMe = async () => {
-      const people = await omdbService.findPeopleThatFollowMe();
+    const fetchPeopleWhoFollowMe = async () => {
+      const people = await omdbService.findPeopleWhoFollowMe();
       setPeopleWhoFollowMe(people);
-    }
+    };
 
     const { currentUser } = useSelector((state) => state.users);
     const [ profile, setProfile ] = useState(currentUser);
     const [moviesILike, setMoviesILike] = useState([]);
     const [peopleIFollow, setPeopleIFollow] = useState([]);
     const [peopleWhoFollowMe, setPeopleWhoFollowMe] = useState([]);
-
+    
     useEffect(() => {
-        fetchMyLikes();
+        fetchPeopleWhoFollowMe();
         fetchPeopleIFollow();
+
+        fetchMyLikes();
         const loadProfile = async () => {
           //try {
             console.log(currentUser);
@@ -117,21 +119,39 @@ function ProfileScreen() {
           Save  
          </button>
 
+         {peopleWhoFollowMe && (
+        <>
+          <h3>People who follow me</h3>
+          <div className="list-group">
+            {peopleWhoFollowMe &&
+              peopleWhoFollowMe.map((person) => (
+                <Link
+                  to={`/filmdom/profile/${person._id}`}
+                  className="list-group-item"
+                  key={person._id}
+                >
+                  <h4>{person.username}</h4>
+                </Link>
+              ))}
+          </div>
+        </>
+      )}
+
         
 
-        {peopleIFollow && (
+      {peopleIFollow && (
           <>
             <h3>People I follow</h3>
             <div className="list-group">
               {peopleIFollow &&
                 peopleIFollow.map((person) => (
-                  <Link 
-                    to={`/project/profile/${person._id}`}
+                  <Link
+                    to={`/filmdom/profile/${person._id}`}
                     className="list-group-item"
                     key={person._id}
-                    >
-                      <h4>{person.username}</h4>
-                    </Link>
+                  >
+                    <h4>{person.username}</h4>
+                  </Link>
                 ))}
             </div>
           </>
