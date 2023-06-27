@@ -10,6 +10,7 @@ function ProfileScreen() {
   const { currentUser } = useSelector((state) => state.users);
   const [profile, setProfile] = useState(currentUser);
   const [myTuits, setMyTuits] = useState([]);
+ 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

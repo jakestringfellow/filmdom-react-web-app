@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as service from "./omdb-service";
 import seriesDetails from "./series-details";
 import { useSelector } from "react-redux";
@@ -9,6 +9,7 @@ function DetailsScreen() {
     const {id} = useParams();
     const [movieDetails, setMovieDetails] = useState();
     const[episodes, setEpisodes] = useState();
+    const [people, setPeople] = useState();
 
     const fetchMovieDetails = async () => {
         const movie = await service.getMovieDetails(id);
@@ -30,8 +31,14 @@ function DetailsScreen() {
     //     setEpisodes(seasons);
     // }
 
+    const findPeopleWhoLikeMovie = async () => {
+        const people = await service.findPeopleWhoLikeMovie(id);
+        setPeople(people);
+    };
+
     useEffect(() => {
         fetchMovieDetails();
+        findPeopleWhoLikeMovie();
         // for (let seasonNumber=1; seasonNumber<movieDetails.totalSeasons+1; seasonNumber++) {
         //     fetchSeriesEpisodes(seasonNumber);
         // }
@@ -51,7 +58,18 @@ function DetailsScreen() {
                             <button>Dislike</button>
                         </div>
                     )}
-                    
+                    {
+                        people && (
+                            <div>
+                                <h2>People who like this movie</h2>
+                                <div className="list-group">
+                                    {people.map((person) => (
+                                        <Link className="link-group-item" to={`/filmdom/profile/${person._id}`} key={person._id}>{person.username}</Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    }
 
 
                     <ul className="list-group">

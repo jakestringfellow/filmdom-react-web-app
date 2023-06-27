@@ -46,7 +46,7 @@ function SearchScreen() {
             <ul className="list-group">
                 {results && 
                     results.Search.map((movie) => (
-                        <li className="list-group-item" key={movie.imbdID}>
+                        <li className="list-group-item" key={movie.imdbID}>
                           <h2> 
                             <Link to={`/filmdom/details/${movie.imdbID}`}>{movie.Title}</Link>
                           </h2>

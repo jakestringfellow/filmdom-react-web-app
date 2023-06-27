@@ -10,6 +10,7 @@ import RegisterScreen from "../tuiter/user/register-screen.js";
 import ProfileScreen from "../tuiter/profile-screen";
 import HomeScreen from "./home-screen";
 import "./filmdom.css";
+import ProfilePublic from "./profile-public";
 // import LoginScreen from "./login";
 // import RegisterScreen from "./register";
 // import ProfileScreen from "./profile";
@@ -31,6 +32,7 @@ function Project() {
                         <Route path="login" element={<LoginScreen/>}/>
                         <Route path="register" element={<RegisterScreen/>}/>
                         <Route path="profile" element={<ProfileScreen/>}/>
+                        <Route path="profile/:profileId" element={<ProfilePublic/>}/>
                     </Routes>
                 </div>
             </div>

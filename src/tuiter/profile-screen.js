@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
 import { current } from "@reduxjs/toolkit";
 import * as omdbService from "../filmdom/omdb-service.js";
@@ -32,12 +33,25 @@ function ProfileScreen() {
       setMoviesILike(movies);
     };
 
+    const fetchPeopleIFollow = async () => {
+      const people = await omdbService.findPeopleIFollow();
+      setPeopleIFollow(people);
+    }
+
+    const fetchPeopleThatFollowMe = async () => {
+      const people = await omdbService.findPeopleThatFollowMe();
+      setPeopleWhoFollowMe(people);
+    }
+
     const { currentUser } = useSelector((state) => state.users);
     const [ profile, setProfile ] = useState(currentUser);
     const [moviesILike, setMoviesILike] = useState([]);
+    const [peopleIFollow, setPeopleIFollow] = useState([]);
+    const [peopleWhoFollowMe, setPeopleWhoFollowMe] = useState([]);
 
     useEffect(() => {
         fetchMyLikes();
+        fetchPeopleIFollow();
         const loadProfile = async () => {
           //try {
             console.log(currentUser);
@@ -102,6 +116,44 @@ function ProfileScreen() {
          <button onClick={save} className="btn btn-primary">
           Save  
          </button>
+
+        
+
+        {peopleIFollow && (
+          <>
+            <h3>People I follow</h3>
+            <div className="list-group">
+              {peopleIFollow &&
+                peopleIFollow.map((person) => (
+                  <Link 
+                    to={`/project/profile/${person._id}`}
+                    className="list-group-item"
+                    key={person._id}
+                    >
+                      <h4>{person.username}</h4>
+                    </Link>
+                ))}
+            </div>
+          </>
+        )}
+
+
+        {moviesILike && (
+          <>
+         <h3>Liked Movies: </h3>
+         
+         <div className="list-group">
+            {moviesILike &&
+              moviesILike.map((movie) => (
+                <Link to={`/filmdom/details/${movie.imdbId}`} className="list-group-item" key={movie.id}>
+                  <h4>{movie.title}</h4>
+                </Link>
+              ))
+            }
+         </div>
+         </>
+        )}
+
          <pre>{JSON.stringify(moviesILike, null, 2)}</pre>
         </div> 
     ); 

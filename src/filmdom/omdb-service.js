@@ -44,6 +44,42 @@ export const getMovieDetails = async (imdbID) => {
         `http://localhost:4000/api/movies/i/like`);
     return response.data;
  }
+
+ export const findPeopleWhoLikeMovie = async (movieId) => {
+    const response = await request.get(
+        `http://localhost:4000/api/movies/movieId/${movieId}/likes`
+    );
+    return response.data;
+ };
+
+ export const createFollow = async (followed) => {
+    const response = await request.post(
+        `http://localhost:4000/api/follows/followed/${followed}`
+    );
+    return response.data;
+ }
+
+ export const findPeopleIFollow = async () => {
+    const response = await request.get(
+        `http://localhost:4000/api/follows/i/followed`
+    );
+    return response.data;
+ };
+
+ export const findPeopleThatFollowMe = async () => {
+    const response = await request.get(
+        `http://localhost:4000/api/follows/followed/me`
+    );
+    return response.data;
+ }
+
+ export const findFollowsByFollowed = async (followed) => {
+    const response = await request.get(
+        `http://localhost:4000/api/follows/followed/${followed}`
+    );
+    return response.data;
+ } 
+
 // export const getSeasonDetails = async () => {
 //     const response = await
 // }
