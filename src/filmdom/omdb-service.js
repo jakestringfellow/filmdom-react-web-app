@@ -52,6 +52,40 @@ export const getMovieDetails = async (imdbID) => {
     return response.data;
  };
 
+
+export const reviewMovie = async (movieId, movie, reviewString) => {
+    console.log("reviewString", reviewString);
+     const response = await request.post(
+         `${BASE_API}/movies/movieId/${movieId}/review`,
+         {movie, reviewString}
+     );
+     return response.data
+  }
+
+  export const findReviews = async ()     => {
+     const response = await axios.get(
+         `${BASE_API}/movies/reviews`
+     ); 
+     const reviews = response.data;                    
+     return reviews;                                   
+ }
+
+  export const findMyReviews = async () => {
+     const response = await request.get(
+         `http://localhost:4000/api/movies/i/review`);
+     return response.data;
+  }
+
+  export const findReviewForMovie = async (movieId) => {
+     const response = await request.get(
+         `http://localhost:4000/api/movies/movieId/${movieId}/reviews`
+     );
+     return response.data;
+  };
+
+
+
+
  export const createFollow = async (followed) => {
     const response = await request.post(
         `http://localhost:4000/api/follows/followed/${followed}`
