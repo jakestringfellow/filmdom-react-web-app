@@ -83,6 +83,20 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
     return response.data;
   }
 
+  export const findFollowedReviews = async () => {
+    const response = await request.get(
+        `http://localhost:4000/api/movies/following/review`);
+    return response.data;
+  }
+
+
+  export const findMovieReviews = async (movieId) => {
+    const response = await request.get(
+        `http://localhost:4000/api/movies/movieId/${movieId}/reviews`
+    );
+    return response.data;
+  }
+
   export const findReviewForMovie = async (movieId) => {
      const response = await request.get(
          `http://localhost:4000/api/movies/movieId/${movieId}/reviews`

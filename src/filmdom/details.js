@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import * as service from "./omdb-service";
 import seriesDetails from "./series-details";
 import { useSelector } from "react-redux";
+import ReviewItem from "./reviews/review-item";
 
 function DetailsScreen() {
     const { currentUser } = useSelector((state) => state.users);
@@ -10,6 +11,7 @@ function DetailsScreen() {
     const [movieDetails, setMovieDetails] = useState();
     const[episodes, setEpisodes] = useState();
     const [peopleWhoLiked, setPeopleWhoLiked] = useState();
+    const [movieReviews, setMovieReviews] = useState();
     let [reviewText, setReviewText] = useState('');
     // const [peopleWhoReviewed, setPeopleWhoReviewed] = useState();
 
@@ -40,22 +42,8 @@ function DetailsScreen() {
         })
     };
 
-    // const handleReviewMovie = async () => {
-    //     // const movie = await service.reviewMovie(id, {
-    //     //     title: movieDetails.Title,
-    //     //     imdbId: movieDetails.imdbID,
-    //     //     released: movieDetails.Released,
-    //     //     genre: movieDetails.Genre
-    //     // })
-    //     const reviewText = 
-    // };
-
-    // const reviewClickHandler = () => {
-    //     const newReview = {
-    //         review: reviewText
-    //     }
-    //     dispatch(createReviewThunk(newReview))
-    // }
+    
+    
     // const fetchSeriesEpisodes = async (seasonNumber) => {
     //     let seasons = [];
     //     const episodes = await service.getSeasonEpisodes(id, seasonNumber);
@@ -73,9 +61,15 @@ function DetailsScreen() {
     //     setPeopleWhoReviewed(people);
     // }
 
+    const findMovieReviews = async () => {
+        const reviews = await service.findMovieReviews(id);
+        setMovieReviews(reviews);
+    }
+
     useEffect(() => {
         fetchMovieDetails();
         findPeopleWhoLikeMovie();
+        findMovieReviews();
         // findPeopleWhoReviewedMovie();
         // for (let seasonNumber=1; seasonNumber<movieDetails.totalSeasons+1; seasonNumber++) {
         //     fetchSeriesEpisodes(seasonNumber);
@@ -134,6 +128,20 @@ function DetailsScreen() {
                     {/* {movieDetails.Type === "series" && (
                         seriesDetails(movieDetails.totalSeasons)
                     )} */}
+
+                        {
+                        movieReviews && 
+                        movieReviews.map((review) => (
+
+                        <ReviewItem review={review}/>
+                        // <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
+                        // <h4>{review.movie.title}</h4>
+
+                        // <li>{review.review}</li>
+                        // </Link>
+                        
+                        ))
+                    }
                 </div>
             )}
             <pre>{JSON.stringify(movieDetails,null,2)}</pre>

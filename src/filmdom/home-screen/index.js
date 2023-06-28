@@ -8,6 +8,8 @@ import SearchScreen from "../search";
 import { useSelector } from "react-redux";
 import * as omdbService from "../omdb-service"
 import ReviewItem from "../reviews/review-item";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -21,14 +23,24 @@ function HomeScreen() {
     setAllReviews(reviews);
   }
 
+  const fetchFollowedReviews = async () => {
+    const reviews = await omdbService.findFollowedReviews();
+    setFollowedReviews(reviews);
+  }
+
   // const fetchFollowedReviews = async () => {
   //   const reviews = await omdbService.
   // }
 
   const [allReviews, setAllReviews] = useState([]);
+  const [followedReviews, setFollowedReviews] = useState([])
 
   useEffect(() => {
     fetchAllReviews();
+    currentUser && (
+      fetchFollowedReviews()
+    )
+      
 
 }, []);
 
@@ -40,7 +52,32 @@ function HomeScreen() {
      {/* <SearchToReview/> */}
      {/* <ReviewList/> */}
      {currentUser && (
+      <div>
         <h1>REVIEWS</h1>
+        {followedReviews && (
+          <>
+          <h3>Reviewed Movies: </h3>
+          <div className="list-group">
+            {
+              followedReviews && 
+                followedReviews.map((review) => (
+
+                  <ReviewItem review={review}/>
+                  // <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
+                  // <h4>{review.movie.title}</h4>
+
+                  // <li>{review.review}</li>
+                  // </Link>
+                  
+                ))
+            }
+            
+          </div>
+          </>
+        )}
+      </div>
+
+        
      )}
      {!currentUser && (
       <div>
@@ -52,14 +89,11 @@ function HomeScreen() {
             {
               allReviews && 
                 allReviews.map((review) => (
-
-                  <ReviewItem review={review}/>
-                  // <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
-                  // <h4>{review.movie.title}</h4>
-
-                  // <li>{review.review}</li>
-                  // </Link>
+                  <div>
+                    <ReviewItem review={review}/>
                   
+                
+                  </div>
                 ))
             }
             
