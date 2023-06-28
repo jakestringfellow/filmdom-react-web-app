@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux"
 import "./navigation.css";
@@ -10,7 +10,30 @@ const NavigationSidebar = () => {
     const { pathname } = useLocation();
     const [ignore, filmdom, active] = pathname.split("/");
     const { currentUser } = useSelector((state) => state.users);
-    const links = ["home",     "search",   "details", "login", "register",  "profile"];
+
+    const [navLinks, setLinks] = useState([]);
+
+    // const setLinksForUser = async () => {
+    //     const links = ["home", "search", "profile"];
+    //     setLinks(links);
+    //   }
+    // const setLinksForAnon = async () => {
+    //     const links = ["home",     "search",   "details", "login", "register"];
+    //     setLinks(links);
+    // }
+
+    const links = ["home", "search", "login", "register", "profile"];
+
+
+    // useEffect(() => {
+    //     currentUser && (
+    //         setLinksForUser()
+    //     )
+    //     !currentUser && (
+    //         setLinksForAnon()
+    //     )
+          
+    // }, []);
 
     return (
         <div class="sticky-top">

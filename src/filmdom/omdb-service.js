@@ -142,6 +142,13 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
     return response.data;
  }
 
+ export const deleteReview = async (id) => {
+    const response = await request.delete(
+        `http://localhost:4000/api/reviews/${id}`
+    );
+    return response.data;
+ }
+
 // export const getSeasonDetails = async () => {
 //     const response = await
 // }

@@ -48,6 +48,11 @@ function HomeScreen() {
  return(
    <>
      <li className="home-header">Home</li>
+     {currentUser && (
+        <h3>Welcome back, {currentUser.username}!</h3>
+     )
+
+     }
      <SearchScreen/>
      {/* <SearchToReview/> */}
      {/* <ReviewList/> */}

@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux";
 //import {TiDelete} from "react-icons/ti";
 //import { deleteTuitThunk } from "../services/tuits-thunks";
 import { Link } from "react-router-dom";
+import {TiDelete} from "react-icons/ti";
+import * as service from "../omdb-service.js";
+
 
 
 
@@ -15,28 +18,39 @@ const ReviewItem = ( {
 ) => {
   const dispatch = useDispatch();
 
-//   const deleteTuitHandler = (id) => {
-//     dispatch(deleteTuitThunk(id));
+  const deleteReviewHandler = async (id) => {
+    //dispatch(deleteTuitThunk(id));
+    const success = await service.deleteReview(id);
 
-//   }
+  }
 
   
 
  return (
   
   <li className="list-group-item">
-    <Link to={`/filmdom/details/${review.movie.imdbID}`}>{
+    
         
         <div className="row">
             <div className="col-2">
-                <b>{review.movie.title}</b>
-                <img width={60} className="" src={review.movie.image}/>
+                <Link to={`/filmdom/details/${review.movie.imdbId}`}>{
+                    <div>
+                        <b>{review.movie.title}</b>
+                        <img width={60} className="" src={review.movie.image}/>
+                    </div>
+                
+                }</Link>
             </div>
              <div className="col-10">
+
                 <div>
-                    {/* <i className="bi bi-x-lg float-end"
-                      onClick={() => deleteTuitHandler(tuit._id)}> <TiDelete/> </i> */}
-                    <b>{review.user.firstName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> @{review.user.username} . {review.time}
+                    <i className="bi bi-x-lg float-end"
+                      onClick={() => deleteReviewHandler(review._id)}> <TiDelete/> </i>
+                      <Link to={`/filmdom/profile/${review.user._id}`}>{
+                        <div>
+                        <b>{review.user.firstName}</b> <i className="verified-check" > <BsFillPatchCheckFill/> </i> @{review.user.username} . {review.time}
+                        </div>
+                    }</Link>
                 </div>
                 <div>{review.review}</div> <br></br>
                 {/* <TuitStats review={review}/> */}
@@ -44,7 +58,7 @@ const ReviewItem = ( {
             </div>
         </div>
     
-    }</Link>
+    
    
   </li>
  );

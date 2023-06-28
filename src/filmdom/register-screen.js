@@ -6,11 +6,12 @@ import { registerThunk } from "../tuiter/services/auth-thunks";           // to 
 function RegisterScreen() {                                        
     const [username, setUsername] = useState("");               // to type username
     const [password, setPassword] = useState("");               // to type password
+    const [role, setRole] = useState("");                       // to type role
     const navigate = useNavigate();                             // to navigate to profile
     const dispatch = useDispatch();                             // to invoke thunks
     const handleRegister = async () => {                        // handles Register button click
         try {
-            await dispatch(registerThunk({ username, password })); // send credentials to login controller
+            await dispatch(registerThunk({ username, password, role })); // send credentials to login controller
             navigate("/filmdom/profile");                               // if successful, navigate to profile
         } catch (e) {
             alert(e);                                           // if not show error
@@ -29,10 +30,16 @@ function RegisterScreen() {
                 <input className="form-control" type="password" value={password}
                 onChange={(event) => setPassword(event.target.value)}/>
             </div>
+            <div className="mt-2">
+                <label>Role</label>
+                <input className="form-control" placeholder="User or Admin?" type="text" value={role}
+                onChange={(event) => setRole(event.target.value)}/>
+            </div>
             <button className="btn btn-primary mt-2"
                     onClick={handleRegister}>
                 Register
             </button>
+            
         </div>
     );
 }
