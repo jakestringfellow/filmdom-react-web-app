@@ -17,6 +17,11 @@ span {
 
     font-size: 26px;
     justify-content: space-between;
+    /* border: none; */
+}
+
+.fd-nav-item {
+    justify-content: space-between;
     border: none;
 }
 
@@ -25,7 +30,7 @@ span {
 }
 
 .list-group-item:hover {
-    color: rgb(211, 191, 72)
+    /* color: rgb(211, 191, 72) */
 }
 
 .nav-link.active {

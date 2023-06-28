@@ -37,7 +37,7 @@ const ReviewStats = ({review}) => {
           <Link onClick={handleReviewLike}>
             {
                 // tuit.liked &&
-                <li className="review-like"><BiLike/> <i className="likes">{review.likes}</i> </li>
+                <li className="review-like"><BiLike/> <text className="likes">{review.likes}</text> </li>
 
             }
             {/* {
@@ -49,7 +49,7 @@ const ReviewStats = ({review}) => {
           <Link onClick={handleReviewDislike}>
             {
                 // tuit.liked &&
-                <li className="tuit-like"><BiDislike/> <i className="disikes">{review.dislikes}</i> </li>
+                <li className="tuit-like"><BiDislike/> <text className="disikes">{review.dislikes}</text> </li>
 
             }
             {/* {

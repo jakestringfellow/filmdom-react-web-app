@@ -1,0 +1,144 @@
+.container {
+    display: flex;
+  }
+  .container.space-around {
+    justify-content: space-around;
+  }
+  .container.space-between {  
+    justify-content: space-between;
+  }
+
+
+  span {
+    white-space:nowrap;
+}
+
+.list-group {
+    /* background-color: black; */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color:rgb(31, 31, 31)
+}
+
+.list-group-item {
+    color:rgb(222, 217, 217);
+    background-color: rgb(24, 24, 24);
+
+    font-size: 26px;
+    justify-content: space-between;
+    /* border: none; */
+}
+
+.selected-link {
+    color:rgb(211, 72, 72)
+}
+
+/* .list-group-item:hover {
+    color: rgb(211, 191, 72)
+} */
+
+.nav-link.active {
+    color: red;
+}
+
+
+
+.filmdom-header {
+    flex-direction: 'row';
+    justify-content: 'space-between';
+    font-size: 1.93em;
+    font-weight: 900;
+    padding-left: 20px;
+}
+
+.user-first-name {
+    color: rgb(238, 238, 238);
+    font-size: 23px;
+}
+    .user-first-name:hover {
+        color: rgb(211, 191, 72)
+    }
+
+.review-box {
+    border: 1px;
+    border-color:rgb(238, 238, 238);
+
+}
+
+.user-handle {
+        color: rgb(179, 179, 179);
+        font-size: 20px;
+        font-style: normal;
+    }
+        .user-handle:hover {
+            color: rgb(167, 151, 61)
+        }
+
+.link {
+    color: #FFF;
+  }
+  .link:hover {
+     /* color: rgb(255, 234, 0) */
+  }
+
+.filmdom-header-icon { 
+    font-size: 3.83em;
+    padding-left: 10px;
+    color: rgb(222, 217, 217);
+}
+
+.movie-title-poster {
+    font-size: 20px;
+    color: rgb(222, 217, 217);
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+    .movie-title-poster:hover {
+        color: rgb(167,151,61);
+    }
+
+.movie-title-review {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.review-text {
+    font-size: 20px;
+    padding-right: 30px
+}
+    .review-text:hover {
+        color: none;
+    }
+
+.review-stats {
+
+}
+
+.filmdom-poster {
+    border: 5px solid;
+    border-color: rgb(0, 0, 0);
+   
+}
+
+.pos-fixed {
+    top: 0px;
+    left: 0px;
+}
+
+.likes {
+    color: rgb(222, 217, 217);
+}
+
+.review-stats {
+    color: rgb(222, 217, 217);
+
+}
+
+.dislikes {
+    color: rgb(222, 217, 217);
+
+}
+
