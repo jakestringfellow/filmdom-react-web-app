@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { profileThunk, updateUserThunk, logoutThunk } from "./services/auth-thunks";
+import { profileThunk, updateUserThunk, logoutThunk } from "../tuiter/services/auth-thunks";
 import { current } from "@reduxjs/toolkit";
-import * as omdbService from "../filmdom/omdb-service.js";
-import ReviewItem from "../filmdom/reviews/review-item.js";
+import * as omdbService from "./omdb-service.js";
+import ReviewItem from "./reviews/review-item.js";
 
 
 function ProfileScreen() {

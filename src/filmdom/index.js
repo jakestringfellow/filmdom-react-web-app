@@ -6,14 +6,12 @@ import SearchScreen from "./search";
 import DetailsScreen from "./details";
 import NavigationSidebar from "./navigation-sidebar";
 import LoginScreen from "../tuiter/user/Login-screen.js";
-import RegisterScreen from "../tuiter/user/register-screen.js";
-import ProfileScreen from "../tuiter/profile-screen";
+import RegisterScreen from "./register-screen.js";
+import ProfileScreen from "./profile-screen";
 import HomeScreen from "./home-screen";
 import "./filmdom.css";
 import ProfilePublic from "./profile-public";
-// import LoginScreen from "./login";
-// import RegisterScreen from "./register";
-// import ProfileScreen from "./profile";
+
 
 function Project() {
     return (

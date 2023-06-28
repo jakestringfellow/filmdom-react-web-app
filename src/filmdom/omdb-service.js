@@ -63,8 +63,9 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
   }
 
   export const findReviews = async ()     => {
+    console.log("Made it this far")
      const response = await axios.get(
-         `${BASE_API}/movies/reviews`
+         `${BASE_API}/reviews`
      ); 
      const reviews = response.data;                    
      return reviews;                                   
@@ -74,6 +75,12 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
      const response = await request.get(
          `http://localhost:4000/api/movies/i/review`);
      return response.data;
+  }
+
+  export const findUserReviews = async (id) => {
+    const response = await request.get(
+        `http://localhost:4000/api/movies/user/${id}/review`);
+    return response.data;
   }
 
   export const findReviewForMovie = async (movieId) => {

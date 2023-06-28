@@ -1,7 +1,7 @@
 import React ,{ useState } from "react";
 import { useNavigate } from "react-router";                     // to navigate to profile after registration
 import { useDispatch } from "react-redux";                      // to invoke thunks
-import { registerThunk } from "../services/auth-thunks";           // to send login HTTP request to server
+import { registerThunk } from "../tuiter/services/auth-thunks";           // to send login HTTP request to server
 
 function RegisterScreen() {                                        
     const [username, setUsername] = useState("");               // to type username

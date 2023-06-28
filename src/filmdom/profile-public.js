@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import * as service from "./omdb-service";
 import { useParams } from "react-router-dom";
+import ReviewItem from "./reviews/review-item";
 
 function ProfilePublic() {
 
     const {profileId} = useParams();
     const [peopleThatFollowMe, setPeopleThatFollowMe] = useState();
+    const [userReviews, setUserReviews] = useState();
     const handleFollow = async () => {
         try {
             await service.createFollow(profileId);
@@ -19,8 +21,15 @@ function ProfilePublic() {
         setPeopleThatFollowMe(people);
     };
 
+    const fetchUserReviews = async () => {
+        const reviews = await service.findUserReviews(profileId);
+        setUserReviews(reviews);
+        
+    }
+
     useEffect(() => {
         fetchPeopleThatFollowMe();
+        fetchUserReviews();
     }, []);
 
     return (
@@ -37,6 +46,20 @@ function ProfilePublic() {
                         </div>
                     </div>
                 )}
+
+                {
+                userReviews && 
+                userReviews.map((review) => (
+
+                  <ReviewItem review={review}/>
+                  // <Link to={`/filmdom/details/${review.movie.imdbId}`} className="list-group-item" key={review.movie._id}>
+                  // <h4>{review.movie.title}</h4>
+
+                  // <li>{review.review}</li>
+                  // </Link>
+                  
+                ))
+            }
         </div>
     );
 }
