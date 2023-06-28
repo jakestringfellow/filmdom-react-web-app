@@ -56,13 +56,18 @@
 .user-first-name {
     color: rgb(238, 238, 238);
     font-size: 23px;
+    padding-left: 3%;
+
 }
     .user-first-name:hover {
         color: rgb(211, 191, 72)
+        /* box-shadow: 0 0 2px 5px #e2ce83,
+              0 0 5px 7px #e6bf31,
+              0 0 7px 10px #e8d388; */
     }
 
 .review-box {
-    border: 1px;
+    border: 2px;
     border-color:rgb(238, 238, 238);
 
 }
@@ -90,10 +95,12 @@
 }
 
 .movie-title-poster {
-    font-size: 20px;
+    font-size: 2vw;
     color: rgb(222, 217, 217);
-    text-align: center;
+    text-align: left;
     padding-bottom: 10px;
+    
+
     
 }
     .movie-title-poster:hover {
@@ -107,19 +114,25 @@
 
 .review-text {
     font-size: 20px;
-    padding-right: 30px
+    padding-right: 30px;
+    padding-left: 30px;
 }
     .review-text:hover {
         color: none;
     }
 
-.review-stats {
 
-}
 
 .filmdom-poster {
-    border: 5px solid;
-    border-color: rgb(0, 0, 0);
+    /* border: 5px solid; */
+    /* border-color: rgb(0, 0, 0); */
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 0 2px 5px #e2ce83,
+              0 0 5px 7px #e6bf31,
+              0 0 7px 10px #e8d388;
+    
+
    
 }
 
@@ -128,17 +141,24 @@
     left: 0px;
 }
 
-.likes {
-    color: rgb(222, 217, 217);
+.review-like {
+    color: rgb(222, 217, 217) !important;
+    font-size: 20px;
 }
 
 .review-stats {
-    color: rgb(222, 217, 217);
+    color: rgb(222, 217, 217) ;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    margin-right: 100px;
+    width: 90%;
 
 }
 
-.dislikes {
-    color: rgb(222, 217, 217);
-
+.review-dislike {
+    color: rgb(222, 217, 217) !important;
+    
 }
+
+
 

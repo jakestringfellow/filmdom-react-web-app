@@ -4,12 +4,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import tuitsReducer from "../tuiter/reducers/tuits-reducer";
 import whoReducer from "../tuiter/reducers/who-reducer";
 import homeTuitsReducer from "../tuiter/tuits/tuits-reducer";
+// import reviewsReducer from "../filmdom/reviews/reviews-reducer";
 
 export const store = configureStore({
   reducer: {
     users: usersReducer,
     tuits: tuitsReducer,
     who: whoReducer, 
-    tuits: homeTuitsReducer
+    tuits: homeTuitsReducer,
+    // reviews: reviewsReducer
   },
 });

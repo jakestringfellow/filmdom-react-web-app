@@ -40,7 +40,7 @@ const ReviewItem = ( {
                 <Link to={`/filmdom/details/${review.movie.imdbId}`} className="movie-title-poster">{
                     <div>
                         <b className="movie-title-review">{review.movie.title}</b> <br/>
-                        <img width={100} className="filmdom-poster" src={review.movie.image}/>
+                        <img width={100} className=" img-fluid filmdom-poster width" src={review.movie.image}/>
                     </div>
                 
                 }</Link>
@@ -50,15 +50,21 @@ const ReviewItem = ( {
                 <div>
                     <i className="bi bi-x-lg float-end"
                       onClick={() => deleteReviewHandler(review._id)}> <TiDelete/> </i>
+                      {/* <div className="row"> */}
+                        
                       <Link to={`/filmdom/profile/${review.user._id}`}>{
                         <div>
                         <b className="user-first-name">{review.user.firstName}</b> <i className="user-handle" > . </i> <i className="user-handle"> @{review.user.username}</i>
                         </div>
-                    }</Link>
+                         }</Link>
+                      {/* </div> */}
+                      
                 </div>
-                <div className="review-text">{review.review}</div> <br></br>
+                <div className="row review-text">{review.review}</div> <br></br>
                 {/* <>{review.likes} . {review.dislikes}</> */}
-                <ReviewStats review={review} className="review-stats"/>
+                <div className="row align-items-end">
+                    <ReviewStats review={review} className="review-stats"/>
+                </div>
        
             </div>
         </div>
