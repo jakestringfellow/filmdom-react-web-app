@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {TiDelete} from "react-icons/ti";
 import * as service from "../omdb-service.js";
+import ReviewStats from "./review-stats.js"
 
 
 
@@ -53,7 +54,8 @@ const ReviewItem = ( {
                     }</Link>
                 </div>
                 <div>{review.review}</div> <br></br>
-                {/* <TuitStats review={review}/> */}
+                {/* <>{review.likes} . {review.dislikes}</> */}
+                <ReviewStats review={review}/>
        
             </div>
         </div>

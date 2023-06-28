@@ -149,6 +149,12 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
     return response.data;
  }
 
+ export const updateReview = async (review) => {         
+    const response = await request                    
+        .put(`http://localhost:4000/api/reviews/${review._id}`, review);      
+    return review;                                    
+}  
+
 // export const getSeasonDetails = async () => {
 //     const response = await
 // }

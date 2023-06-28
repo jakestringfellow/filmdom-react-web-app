@@ -1,5 +1,6 @@
-import { FaHome, FaSearch, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEllipsisH } from "react-icons/fa";
+import { FaHome, FaRegUser, FaSearch, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEllipsisH } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
+
 
 function LinkIcons(link) {
     if(link === "home") {
@@ -7,6 +8,12 @@ function LinkIcons(link) {
     } 
     else if (link === "search") {
         return (<i> <FaSearch/>  </i>);
+    }
+    else if (link === "login") {
+        return (<i> <FaUser/></i>)
+    }
+    else if (link === "register") {
+        return (<i><FaRegUser/></i>)
     }
     else if (link === "notifications") {
         return (<i> <FaBell/>  </i>);
