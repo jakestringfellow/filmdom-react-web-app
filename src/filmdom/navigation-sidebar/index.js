@@ -51,7 +51,7 @@ const NavigationSidebar = () => {
                 <NavLink to={`/filmdom/${link}`} style={({ isActive }) => ({
                     //color: isActive ? '#fff' : '#545e6f',
                     background: isActive ? '#404040' : '#181818',
-                  })} className={`list-group-item fd-nav-item text-capitalize ${active === link ? "active" : ""}`}>
+                  })} className={`list-group-item filmdom-nav-link fd-nav-item text-capitalize ${active === link ? "active" : ""}`}>
                 {LinkIcons(link)} {<span className="d-none d-xl-inline ">{link}</span>}
                 </NavLink>
                 )}

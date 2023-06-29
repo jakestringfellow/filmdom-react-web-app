@@ -30,7 +30,7 @@ const ReviewItem = ( {
 
  return (
     <div>
-    <hr/>
+    <hr className="review-item-hr"/>
   
   <li className="list-group-item review-box">
     
@@ -48,7 +48,7 @@ const ReviewItem = ( {
              <div className="col-9">
 
                 <div>
-                    <i className="bi bi-x-lg float-end"
+                    <i className="bi bi-x-lg float-end review-delete"
                       onClick={() => deleteReviewHandler(review._id)}> <TiDelete/> </i>
                       {/* <div className="row"> */}
                         

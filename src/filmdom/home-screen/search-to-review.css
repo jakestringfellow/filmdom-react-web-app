@@ -1,10 +1,15 @@
 .user-icon {
     font-size: 30px;
     padding-top: 30px;
-    color: rgb(166, 166, 166);
+    color: rgb(205, 204, 204);
     /* position: sticky; */
     padding-top: 10px;
     display:inline-block;
+    padding-left: 20px;
+}
+
+.filmdom-welcome {
+    color: rgb(189, 189, 189);
 }
 
 .search-button {
@@ -12,6 +17,7 @@
     border-color: black;
     flex-wrap: nowrap;
     position: sticky;
+    float:left;
 }
 
 .form-control:focus {
@@ -24,7 +30,7 @@
 
 .search-box {
     flex-wrap: nowrap;
-    width: 90%;
+    width: 100%;
     top:  10px;
     position: sticky;
 }
@@ -46,4 +52,9 @@
  .btn:hover {
     background-color: rgb(211, 191, 72);
     border-color: black;
+ }
+
+ .following-header {
+    color: rgb(189, 189, 189);
+
  }

@@ -49,7 +49,7 @@ function HomeScreen() {
    <>
      <li className="home-header">Home</li>
      {currentUser && (
-        <h3>Welcome back, {currentUser.username}!</h3>
+        <h3 className="filmdom-welcome">Welcome back, {currentUser.username}!</h3>
      )
 
      }
@@ -58,10 +58,9 @@ function HomeScreen() {
      {/* <ReviewList/> */}
      {currentUser && (
       <div>
-        <h1>REVIEWS</h1>
         {followedReviews && (
           <>
-          <h3>Reviewed Movies: </h3>
+          <h3 className="following-header">Following: </h3>
           <div className="list-group">
             {
               followedReviews && 
@@ -106,7 +105,7 @@ function HomeScreen() {
           </>
         )}
 
-        <pre>{JSON.stringify(allReviews, null, 2)}</pre> 
+        {/* <pre>{JSON.stringify(allReviews, null, 2)}</pre>  */}
 
       </div>
         
