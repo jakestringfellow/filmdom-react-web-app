@@ -12,7 +12,7 @@ import homeTuitsReducer from "./tuits/tuits-reducer";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import ProfileScreen from "../filmdom/profile-screen";
-import LoginScreen from "./user/Login-screen";
+import LoginScreen from "../filmdom/Login-screen";
 import RegisterScreen from "../filmdom/register-screen";
 import authReducer from "./reducers/auth-reducer";
 import userReducer from "./reducers/auth-reducer";

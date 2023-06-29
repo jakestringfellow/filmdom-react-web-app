@@ -1,7 +1,7 @@
 import React ,{ useState } from "react";
 import { useNavigate } from "react-router";                     // to navigate to profile after login
 import { useDispatch } from "react-redux";                      // to invoke thunks
-import { loginThunk } from "../services/auth-thunks";           // to send login HTTP request to server
+import { loginThunk } from "../tuiter/services/auth-thunks";           // to send login HTTP request to server
 
 function LoginScreen() {                                        
     const [username, setUsername] = useState({});               // to type username
@@ -21,18 +21,18 @@ function LoginScreen() {
     };
     return ( 
         <div>
-            <h1> Login Screen </h1>                                                 
+            <h1 className="login-register-header"> Login Screen </h1>                                                 
             <div className="mt-2">
-                <label>Username</label>
-                <input className="form-control" type="text" value={username}
+                <label className="auth-label">Username</label>
+                <input className="form-control auth-field" type="text" placeholder="example-username99"
                 onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="mt-2">
-                <label>Password</label>
-                <input className="form-control" type="password" value={password}
+                <label className="auth-label">Password</label>
+                <input className="form-control auth-field" type="password" placeholder="example-password123"
                 onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <button className="btn btn-primary mt-2"
+            <button className="btn btn-primary mt-2 login-button"
                     onClick={handleLogin}>
                 Login
             </button>

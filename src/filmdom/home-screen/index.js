@@ -85,10 +85,10 @@ function HomeScreen() {
      )}
      {!currentUser && (
       <div>
-        <h1>ANON</h1>
+        {/* <h1>ANON</h1> */}
         {allReviews && (
           <>
-          <h3>Reviewed Movies: </h3>
+          <h3 className="following-header"> Recent Reviews: </h3>
           <div className="list-group">
             {
               allReviews && 

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router";
 import SearchScreen from "./search";
 import DetailsScreen from "./details";
 import NavigationSidebar from "./navigation-sidebar";
-import LoginScreen from "../tuiter/user/Login-screen.js";
+import LoginScreen from "./Login-screen.js";
 import RegisterScreen from "./register-screen.js";
 import ProfileScreen from "./profile-screen";
 import HomeScreen from "./home-screen";

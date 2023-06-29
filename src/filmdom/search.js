@@ -25,7 +25,7 @@ function SearchScreen() {
         <div>
             {/* <li className="search-header">Search</li> */}
         <div className="row sticky-top">
-            <div className="col-1">
+            <div className="col-2">
                 <i className="user-icon"><FaSearch/></i>
             </div>
         {/* <div> */}

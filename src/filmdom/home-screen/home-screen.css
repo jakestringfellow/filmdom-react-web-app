@@ -32,3 +32,8 @@
    font-size: 1.90em;
    font-weight: 700;
 }
+
+.following-header {
+   color: rgb(189, 189, 189);
+   padding-left: 30px;
+}
