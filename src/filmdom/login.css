@@ -25,3 +25,7 @@
     background-color: gray;
     border-color: rgb(47, 47, 47);
 }
+
+.movie-plot {
+    color: white !important;
+}

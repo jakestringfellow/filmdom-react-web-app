@@ -22,7 +22,7 @@ const NavigationSidebar = () => {
     //     setLinks(links);
     // }
 
-    const links = ["home", "search", "login", "register", "profile"];
+    const links = ["home", "login", "register", "profile"];
 
 
     // useEffect(() => {

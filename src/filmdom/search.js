@@ -52,14 +52,24 @@ function SearchScreen() {
             <ul className="list-group">
                 {results && 
                     results.Search.map((movie) => (
-                        <li className="list-group-item" key={movie.imdbID}>
-                          <h2> 
-                            <Link to={`/filmdom/details/${movie.imdbID}`}>{movie.Title}</Link>
-                          </h2>
-                          <img src={movie.Poster} />
-                          {/* <pre>{JSON.stringify(movie,null,2)}</pre> */}
-                           
-                        </li>
+                        <Link to={`/filmdom/details/${movie.imdbID}`} className="list-group-item" key={movie._id}>
+                                <div className="row">
+                                    <div class="col-1">
+                                    <img width={50} className=" img-fluid filmdom-poster" src={movie.Poster}/>
+                                    </div>
+                                    
+                                    <div class="col-11">
+                                    <div class="row">
+                                        <p className="favorite-movie-title">{movie.Title}</p>
+
+                                    </div>
+                                    <div class="row">
+                                        <p className="favorite-movie-genre">{movie.Genre}</p>
+
+                                    </div>
+                                    </div>
+                                </div>
+                            </Link>
                     ))}
             </ul>
              
