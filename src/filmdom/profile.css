@@ -1,0 +1,135 @@
+
+
+.login-register-header {
+    color:rgb(222, 217, 217);
+   padding-top: 32px;
+   padding-left: 30px;
+   padding-bottom: 15px;;
+   font-size: 1.90em;
+   font-weight: 700;
+}
+
+.public-profile-name-header {
+    color:rgb(222, 217, 217);
+   padding-top: 32px;
+   padding-left: 30px;
+   padding-bottom: 5px;;
+   font-size: 1.90em;
+   font-weight: 700;
+}
+.public-profile-handle-header {
+    color:rgb(165, 164, 164);
+   padding-top: 0px;
+   padding-left: 33px;
+   padding-bottom: 10px;;
+   font-size: 1.50em;
+   font-weight: 400;
+}
+
+.auth-label {
+    color:rgb(222, 217, 217);
+    padding-top: 20px;
+    /* padding-left: 25px; */
+    padding-bottom: 5px;;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.auth-field {
+    max-width: 50%;
+    padding-bottom: 5px;
+}
+
+.login-button {
+    background-color: gray;
+    border-color: rgb(47, 47, 47);
+}
+
+.logout-button {
+    background-color: gray;
+    border-color: rgb(47, 47, 47);
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 80px;
+    margin-bottom: 15px;;
+
+
+}
+
+.dropdown-content {
+    appearance: none;
+}
+
+.logout-button:hover {
+    background-color: rgb(157, 3, 3) !important;
+}
+
+.save-button {
+    background-color: gray;
+    border-color: rgb(47, 47, 47);
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;;
+    width: 80px;
+
+}
+
+.save-button:hover {
+    background-color: rgb(0, 221, 255) !important;
+}
+
+.profile-follow-link {
+    font-size: 15px;
+}
+
+.reviews-header {
+    color: rgb(189, 189, 189);
+    padding-left: 30px;
+    margin-top: 30px;
+ }
+
+ .favorite-movie-title {
+    font-size: 2vw;
+    color: rgb(222, 217, 217);
+    text-align: left;
+    /* padding-bottom: 10px; */
+    margin-top: 10px;
+    margin-left: 10px;
+    
+
+    
+}
+    .favorite-movie-title:hover {
+        color: rgb(255, 217, 0)
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3d3d3d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: none;
+    z-index: 1;
+
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  .favorite-movie-genre {
+    color: rgb(179, 179, 179);
+    font-size: 1vw;
+    font-style: normal;
+    margin-left: 10px;
+}

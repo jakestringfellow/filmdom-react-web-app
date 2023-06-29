@@ -6,6 +6,10 @@ import { profileThunk, updateUserThunk, logoutThunk } from "../tuiter/services/a
 import { current } from "@reduxjs/toolkit";
 import * as omdbService from "./omdb-service.js";
 import ReviewItem from "./reviews/review-item.js";
+import "./profile.css";
+import { RxDividerHorizontal } from "react-icons/rx";
+
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 
 function ProfileScreen() {
@@ -55,6 +59,8 @@ function ProfileScreen() {
       return (movie);
     }
 
+    
+
     // const fetchReviewMovies = async () => {
     //   const reviewMovies = omdbService.findMovieById(id);
     // }
@@ -91,20 +97,20 @@ function ProfileScreen() {
     }, []);
     return (
         <div>
-         <h1>Profile Screen</h1>
+         <h1 className="login-register-header">Profile Screen</h1>
          {profile && (//<div>
             <> 
-            <label>Username</label>
-            <input className="form-control" value={profile.username || ""} readOnly />
-            <label>Password</label>
+            <label className="auth-label">Username</label>
+            <input className="form-control auth-field" value={profile.username || ""} readOnly />
+            <label className="auth-label">Password</label>
             <input
-              className="form-control"
+              className="form-control auth-field"
               value={profile.password}
               type="password"
             />
-            <label>First Name</label>
+            <label className="auth-label">First Name</label>
             <input
-            className="form-control"
+            className="form-control auth-field"
             type="text"
             value={profile.firstName}
             onChange={(event) => {
@@ -117,9 +123,9 @@ function ProfileScreen() {
               //setProfile({ ...profile, firstName: event.target.value })
             }
           />
-            <label>Last Name</label>
+            <label className="auth-label">Last Name</label>
           <input
-            className="form-control"
+            className="form-control auth-field"
             type="text"
             value={profile.lastName || ""}
             onChange={(event) => {
@@ -135,14 +141,68 @@ function ProfileScreen() {
           </>
            //</div></div>
          )}
-         <button onClick={handleLogout} className="btn btn-danger"> 
+         <div className="row">
+         <button onClick={handleLogout} className="btn logout-button"> 
           Logout
          </button>
-         <button onClick={save} className="btn btn-primary">
+         <button onClick={save} className="btn btn-primary save-button">
           Save  
          </button>
+         </div>
 
-         {peopleWhoFollowMe && (
+         <hr/>
+
+         <div className="row">
+              <div className="col-4">
+                  <div class="dropdown">
+                          {/* <span>{peopleWhoFollowMe.length} Followers </span> */}
+                          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{peopleIFollow.length} Following</button>
+                          <div class="dropdown-content">
+                          <div className="list-group">
+                              {peopleIFollow &&
+                                peopleIFollow.map((person) => (
+                                  <Link
+                                    to={`/filmdom/profile/${person._id}`}
+                                    className="list-group-item"
+                                    key={person._id}
+                                  >
+                                    <p className="profile-follow-link">{person.firstName} <br/> @{person.username}</p>
+                                  </Link>
+                                ))}
+                            </div>
+                      </div>
+              </div>
+            </div>
+            
+            <div className="col-4">
+              <div className="col-4">
+                      <div class="dropdown">
+                          {/* <span>{peopleWhoFollowMe.length} Followers </span> */}
+                          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{peopleWhoFollowMe.length} Followers</button>
+                          <div class="dropdown-content">
+                          <div className="list-group">
+                              {peopleWhoFollowMe &&
+                                peopleWhoFollowMe.map((person) => (
+                                  <Link
+                                    to={`/filmdom/profile/${person._id}`}
+                                    className="list-group-item"
+                                    key={person._id}
+                                  >
+                                    <p className="profile-follow-link">{person.firstName} <br/> @{person.username}</p>
+                                  </Link>
+                                ))}
+                            </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+         </div>
+
+         
+
+         {/* {peopleWhoFollowMe && (
         <>
           <h3>People who follow me</h3>
           <div className="list-group">
@@ -158,11 +218,11 @@ function ProfileScreen() {
               ))}
           </div>
         </>
-      )}
+      )} */}
 
         
 
-      {peopleIFollow && (
+      {/* {peopleIFollow && (
           <>
             <h3>People I follow</h3>
             <div className="list-group">
@@ -178,18 +238,33 @@ function ProfileScreen() {
                 ))}
             </div>
           </>
-        )}
+        )} */}
 
 
         {moviesILike && (
           <>
-         <h3>Liked Movies: </h3>
+         <h3 className="reviews-header">Favorite Movies: </h3>
          
          <div className="list-group">
             {moviesILike &&
               moviesILike.map((movie) => (
                 <Link to={`/filmdom/details/${movie.imdbId}`} className="list-group-item" key={movie.id}>
-                  <h4>{movie.title}</h4>
+                  <div className="row">
+                    <div class="col-1">
+                    <img width={50} className=" img-fluid filmdom-poster" src={movie.image}/>
+                    </div>
+                    
+                    <div class="col-11">
+                      <div class="row">
+                        <p className="favorite-movie-title">{movie.title}</p>
+
+                      </div>
+                      <div class="row">
+                        <p className="favorite-movie-genre">{movie.genre}</p>
+
+                      </div>
+                    </div>
+                  </div>
                 </Link>
               ))
             }
@@ -199,7 +274,7 @@ function ProfileScreen() {
 
         {myReviews && (
           <>
-          <h3>Reviewed Movies: </h3>
+          <h3 className="reviews-header">Reviewed Movies: </h3>
           <div className="list-group">
             {
               myReviews && 
@@ -218,7 +293,7 @@ function ProfileScreen() {
           </div>
           </>
         )}
-         <pre>{JSON.stringify(myReviews, null, 2)}</pre>
+         {/* <pre>{JSON.stringify(myReviews, null, 2)}</pre> */}
          {/* <pre>{JSON.stringify(moviesILike, null, 2)}</pre> */}
         </div> 
     ); 

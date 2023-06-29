@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import * as service from "./omdb-service";
 import { useParams } from "react-router-dom";
 import ReviewItem from "./reviews/review-item";
+import "./profile.css";
+import { Link } from "react-router-dom";
+
 
 function ProfilePublic() {
 
     const {profileId} = useParams();
     const [peopleThatFollowMe, setPeopleThatFollowMe] = useState();
     const [userReviews, setUserReviews] = useState();
+    const [profileUser, setProfileUser] = useState();
+    const [peopleIFollow, setPeopleIFollow] = useState();
+
     const handleFollow = async () => {
         try {
             await service.createFollow(profileId);
@@ -16,10 +22,22 @@ function ProfilePublic() {
         }
     };
 
+    const fetchUser = async () => {
+
+        const user = await service.getUserById(profileId);
+        console.log("USER: ", user)
+        setProfileUser(user);
+    }
+
     const fetchPeopleThatFollowMe = async () => {
         const people = await service.findFollowsByFollowed(profileId);
         setPeopleThatFollowMe(people);
     };
+
+    const fetchPeopleIFollow = async () => {
+        const people = await service.findFollowsByFollower(profileId);
+        setPeopleIFollow(people);
+      }
 
     const fetchUserReviews = async () => {
         const reviews = await service.findUserReviews(profileId);
@@ -29,21 +47,48 @@ function ProfilePublic() {
 
     useEffect(() => {
         fetchPeopleThatFollowMe();
+        // fetchPeopleIFollow();
+
         fetchUserReviews();
+        fetchUser();
     }, []);
 
     return (
         <div>
-            <h1>Profile Public {profileId}</h1>
-            <button onClick={handleFollow}>Follow</button>
+            {profileUser && (
+                <div>
+                <h1 className="public-profile-name-header">{profileUser.firstName}'s Profile</h1>
+                <h1 className="public-profile-handle-header">@{profileUser.username}'s Profile</h1>
+                </div>
+            )}
+            {/* <h1 className="public-profile-name-header">{profileUser.firstName}'s Profile</h1> */}
+            {/* <h1 className="public-profile--header">@{profileUser.username}'s Profile</h1> */}
+
+            <button className="btn btn-primary mt-2 login-button login-button" onClick={handleFollow}>Follow</button>
+                
                 {peopleThatFollowMe && (
                     <div>
-                        <h2> People that follow me</h2>
-                        <div className="list-group">
-                            {peopleThatFollowMe.map((person) => (
-                                <div className="list-group-item">{person.follower.username}</div>
-                            ))}
-                        </div>
+                        <div className="col-4">
+                      <div class="dropdown">
+                          {/* <span>{peopleWhoFollowMe.length} Followers </span> */}
+                          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{peopleThatFollowMe.length} Followers</button>
+                          <div class="dropdown-content">
+                          <div className="list-group">
+                              {peopleThatFollowMe &&
+                                peopleThatFollowMe.map((person) => (
+                                  <Link
+                                    to={`/filmdom/profile/${person._id}`}
+                                    className="list-group-item"
+                                    key={person._id}
+                                  >
+                                    <p className="profile-follow-link">{person.firstName} <br/> @{person.username}</p>
+                                  </Link>
+                                ))}
+                            </div>
+                      </div>
+                </div>
+              </div>
                     </div>
                 )}
 
@@ -60,6 +105,15 @@ function ProfilePublic() {
                   
                 ))
             }
+
+
+
+
+
+
+
+
+            
         </div>
     );
 }

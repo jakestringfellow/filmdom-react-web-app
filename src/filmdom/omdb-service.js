@@ -107,6 +107,8 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
 
 
 
+
+
  export const createFollow = async (followed) => {
     const response = await request.post(
         `http://localhost:4000/api/follows/followed/${followed}`
@@ -135,6 +137,13 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
     return response.data;
  } 
 
+ export const findFollowsByFollower = async (follower) => {
+    const response = await axios.get(
+        `http://localhost:4000/api/follows/follower/${follower}`
+    );
+    return response.data;
+ }
+
  export const findMovieById = async (id) => {
     const response = await axios.get(
         `http://localhost:4000/api/movies/${id}`
@@ -154,6 +163,12 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
         .put(`http://localhost:4000/api/reviews/${review._id}`, review);      
     return review;                                    
 }  
+
+export const getUserById = async (id) => {
+    console.log("Fetching user")
+    const response = await axios.get(`http://localhost:4000/api/users/${id}`);
+    return response.data;
+}
 
 // export const getSeasonDetails = async () => {
 //     const response = await
