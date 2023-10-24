@@ -7,7 +7,7 @@ const request = axios.create({
 export const KEY = process.env.REACT_APP_OMDB_API_KEY;
 const OMDB_API = "http://www.omdbapi.com";
 // localhost:4000/api
-const BASE_API = "http://localhost:4000/api";//process.env.REACT_APP_API_BASE;
+const BASE_API = process.env.REACT_APP_API_BASE;
 
 export const fullTextSearch = async (text) => {
     const response = await axios.get(
@@ -41,13 +41,13 @@ export const getMovieDetails = async (imdbID) => {
 
  export const findMoviesILike = async () => {
     const response = await request.get(
-        `http://localhost:4000/api/movies/i/like`);
+        `${BASE_API}/movies/i/like`);
     return response.data;
  }
 
  export const findPeopleWhoLikeMovie = async (movieId) => {
     const response = await request.get(
-        `http://localhost:4000/api/movies/movieId/${movieId}/likes`
+        `${BASE_API}/movies/movieId/${movieId}/likes`
     );
     return response.data;
  };
@@ -73,33 +73,33 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
 
   export const findMyReviews = async () => {
      const response = await request.get(
-         `http://localhost:4000/api/movies/i/review`);
+         `${BASE_API}/movies/i/review`);
      return response.data;
   }
 
   export const findUserReviews = async (id) => {
     const response = await request.get(
-        `http://localhost:4000/api/movies/user/${id}/review`);
+        `${BASE_API}/movies/user/${id}/review`);
     return response.data;
   }
 
   export const findFollowedReviews = async () => {
     const response = await request.get(
-        `http://localhost:4000/api/movies/following/review`);
+        `${BASE_API}/movies/following/review`);
     return response.data;
   }
 
 
   export const findMovieReviews = async (movieId) => {
     const response = await request.get(
-        `http://localhost:4000/api/movies/movieId/${movieId}/reviews`
+        `${BASE_API}/movies/movieId/${movieId}/reviews`
     );
     return response.data;
   }
 
   export const findReviewForMovie = async (movieId) => {
      const response = await request.get(
-         `http://localhost:4000/api/movies/movieId/${movieId}/reviews`
+         `${BASE_API}/movies/movieId/${movieId}/reviews`
      );
      return response.data;
   };
@@ -111,62 +111,62 @@ export const reviewMovie = async (movieId, movie, reviewString) => {
 
  export const createFollow = async (followed) => {
     const response = await request.post(
-        `http://localhost:4000/api/follows/followed/${followed}`
+        `${BASE_API}/follows/followed/${followed}`
     );
     return response.data;
  }
 
  export const findPeopleIFollow = async () => {
     const response = await request.get(
-        `http://localhost:4000/api/follows/i/followed`
+        `${BASE_API}/follows/i/followed`
     );
     return response.data;
  };
 
  export const findPeopleWhoFollowMe = async () => {
     const response = await request.get(
-        `http://localhost:4000/api/follows/i/followed/me`
+        `${BASE_API}/follows/i/followed/me`
     );
     return response.data;
  }
 
  export const findFollowsByFollowed = async (followed) => {
     const response = await request.get(
-        `http://localhost:4000/api/follows/followed/${followed}`
+        `${BASE_API}/follows/followed/${followed}`
     );
     return response.data;
  } 
 
  export const findFollowsByFollower = async (follower) => {
     const response = await axios.get(
-        `http://localhost:4000/api/follows/follower/${follower}`
+        `${BASE_API}/follows/follower/${follower}`
     );
     return response.data;
  }
 
  export const findMovieById = async (id) => {
     const response = await axios.get(
-        `http://localhost:4000/api/movies/${id}`
+        `${BASE_API}/movies/${id}`
     );
     return response.data;
  }
 
  export const deleteReview = async (id) => {
     const response = await request.delete(
-        `http://localhost:4000/api/reviews/${id}`
+        `${BASE_API}/reviews/${id}`
     );
     return response.data;
  }
 
  export const updateReview = async (review) => {         
     const response = await request                    
-        .put(`http://localhost:4000/api/reviews/${review._id}`, review);      
+        .put(`${BASE_API}/reviews/${review._id}`, review);      
     return review;                                    
 }  
 
 export const getUserById = async (id) => {
     console.log("Fetching user")
-    const response = await axios.get(`http://localhost:4000/api/users/${id}`);
+    const response = await axios.get(`${BASE_API}/users/${id}`);
     return response.data;
 }
 

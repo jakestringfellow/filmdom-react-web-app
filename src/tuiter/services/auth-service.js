@@ -4,8 +4,8 @@ import axios from "axios";
 
 
 //NEW
-const USER_API = "http://localhost:4000/api/users";
-const BASE_API = "http://localhost:4000";
+const USER_API = "https://limitless-cliffs-74232-2fe1c2ae109b.herokuapp.com/api/users";//"http://localhost:4000/api/users";
+const BASE_API = "https://limitless-cliffs-74232-2fe1c2ae109b.herokuapp.com/api";//"http://localhost:4000";
 
 const api = axios.create({ withCredentials: true });                                // configure axios to support cookies
                                                                                     // for passing credentials

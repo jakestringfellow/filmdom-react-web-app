@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux"
 import "./navigation.css";
@@ -11,7 +11,7 @@ const NavigationSidebar = () => {
     const [ignore, filmdom, active] = pathname.split("/");
     const { currentUser } = useSelector((state) => state.users);
 
-    const [navLinks, setLinks] = useState([]);
+    //const [navLinks, setLinks] = useState([]);
 
     // const setLinksForUser = async () => {
     //     const links = ["home", "search", "profile"];
@@ -22,7 +22,10 @@ const NavigationSidebar = () => {
     //     setLinks(links);
     // }
 
-    const links = ["home", "login", "register", "profile"];
+    const authLinks = ["home", "profile"]
+    const anonLinks = ["home", "login", "register"];
+
+    const linksToDisplay = currentUser ? authLinks : anonLinks;
 
 
     // useEffect(() => {
@@ -39,14 +42,14 @@ const NavigationSidebar = () => {
         <div class="sticky-top">
             <li>
                 <i className="filmdom-header-icon"><BiCameraMovie/></i>
-                <text className="filmdom-header d-none d-xl-inline">
+                <span className="filmdom-header d-none d-xl-inline">
                     FILMDOM
-                </text>
+                </span>
             </li>
         
         <div className="list-group">
             <div className="row">
-                {links.map((link) => 
+                {linksToDisplay.map((link) => 
                 
                 <NavLink to={`/filmdom/${link}`} style={({ isActive }) => ({
                     //color: isActive ? '#fff' : '#545e6f',

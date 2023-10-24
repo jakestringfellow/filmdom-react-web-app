@@ -1,1 +1,1 @@
-export REACT_APP_API_BASE=http://localhost:4000/api
+export REACT_APP_API_BASE=https://limitless-cliffs-74232-2fe1c2ae109b.herokuapp.com/api
