@@ -7,7 +7,7 @@ const request = axios.create({
 export const KEY = process.env.REACT_APP_OMDB_API_KEY;
 const OMDB_API = "https://www.omdbapi.com";
 // localhost:4000/api
-const BASE_API = process.env.REACT_APP_API_BASE;
+const BASE_API = process.env.REACT_APP_API_BASE_HOSTED;
 
 export const fullTextSearch = async (text) => {
     const response = await axios.get(
