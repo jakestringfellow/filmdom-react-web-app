@@ -5,7 +5,7 @@ const request = axios.create({
 });
 
 export const KEY = process.env.REACT_APP_OMDB_API_KEY;
-const OMDB_API = "http://www.omdbapi.com";
+const OMDB_API = "https://www.omdbapi.com";
 // localhost:4000/api
 const BASE_API = process.env.REACT_APP_API_BASE;
 
