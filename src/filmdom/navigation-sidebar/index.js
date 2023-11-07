@@ -22,8 +22,8 @@ const NavigationSidebar = () => {
     //     setLinks(links);
     // }
 
-    const authLinks = ["home", "profile"]
-    const anonLinks = ["home", "login", "register"];
+    const authLinks = ["home", "search", "profile", "settings", "review"];
+    const anonLinks = ["home", "search", "login", "settings", "review"];
 
     const linksToDisplay = currentUser ? authLinks : anonLinks;
 
@@ -38,14 +38,7 @@ const NavigationSidebar = () => {
           
     // }, []);
 
-    return (
-        <div class="sticky-top">
-            <li>
-                <i className="filmdom-header-icon"><BiCameraMovie/></i>
-                <span className="filmdom-header d-none d-xl-inline">
-                    FILMDOM
-                </span>
-            </li>
+    return (     
         
         <div className="list-group">
             <div className="row">
@@ -67,7 +60,7 @@ const NavigationSidebar = () => {
             <Link to="profile" className="list-group-item list-group-item-action d-none d-xl-inline">Profile</Link> */}
         </div>
 
-        </div>
+        
         
     );
 }

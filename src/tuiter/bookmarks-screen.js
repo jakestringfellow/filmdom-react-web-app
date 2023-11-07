@@ -1,4 +1,4 @@
-function BookmarksScreen() {
-    return <h1>Bookmarks</h1>
-}
-export default BookmarksScreen;
+// function BookmarksScreen() {
+//     return <h1>Bookmarks</h1>
+// }
+// export default BookmarksScreen;

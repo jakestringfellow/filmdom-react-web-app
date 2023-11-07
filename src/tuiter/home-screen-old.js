@@ -1,11 +1,11 @@
 
 
-function HomeScreen() {
-    return (
-    <div>
-    <h1>Home</h1>
-    </div>
-    );
-}
+// function HomeScreen() {
+//     return (
+//     <div>
+//     <h1>Home</h1>
+//     </div>
+//     );
+// }
 
-export default HomeScreen;
+// export default HomeScreen;

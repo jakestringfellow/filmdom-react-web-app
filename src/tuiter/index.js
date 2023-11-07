@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router";
-import Nav from "../nav";
+// import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
 import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
 import HomeScreen from "./home-screen";
@@ -31,7 +31,7 @@ function Tuiter() {
     // <Provider store = {store}>
 
         <div>
-            <Nav/>
+            {/* <Nav/> */}
             <div className="row">
                 <div className="col-2">
                     <NavigationSidebar/>

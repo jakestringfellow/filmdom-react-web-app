@@ -4,11 +4,13 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './global.css';
 
-
+// Make the 'root' element the mount point for the app
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Render the app inside strict mode for additional checks
 root.render(
   <React.StrictMode>
     <App />

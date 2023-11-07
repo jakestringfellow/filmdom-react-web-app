@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./home-screen.css";
-import SearchScreen from "../search";
+import SearchScreen from "../header/search";
 import { useSelector } from "react-redux";
 import * as omdbService from "../omdb-service"
 import ReviewItem from "../reviews/review-item";

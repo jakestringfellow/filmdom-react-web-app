@@ -33,29 +33,7 @@ span {
     /* color: rgb(255, 217, 0) */
 }
 
-.filmdom-nav-link:hover {
-    color: rgb(255, 217, 0)
 
-}
-
-.nav-link.active {
-    color: red;
-}
-
-
-.filmdom-header {
-    flex-direction: 'row';
-    justify-content: 'space-between';
-    font-size: 1.93em;
-    font-weight: 900;
-    padding-left: 20px;
-}
-
-.filmdom-header-icon { 
-    font-size: 3.83em;
-    padding-left: 10px;
-    color: rgb(222, 217, 217);
-}
 
 .pos-fixed {
     top: 0px;

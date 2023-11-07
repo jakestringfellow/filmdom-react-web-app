@@ -1,0 +1,95 @@
+@import 'normalize.css';
+
+/* Color Scheme Variables */
+:root {
+	--main-text-color: #D5DFFC; /* Main text color - light blue */
+	--secondary-text-color: #6F7483; /* Secondary text color - muted blue-grey */
+	--main-bg-color: #282A30;
+	--secondary-bg-color: #3F424F;
+}
+
+/* Typography */
+html {
+	font-size: 100%; /* this sets the base font size to the browser default, typically 16px */
+  }
+  
+  body {
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height: 1.6;
+	color: var(--main-text-color); /* Main text color */
+	background-color: #282A30; /* Replace with your background color */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif; /* Replace with your heading font */
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	color: var(--main-text-color); /* Using main text color for headings */
+  }
+  
+  p {
+	margin-top: 0;
+	margin-bottom: 1em;
+	color: var(--secondary-text-color); /* Using secondary text color for paragraphs */
+  }
+  
+  /* Links */
+  a {
+	color: var(--main-text-color);
+	text-decoration: none;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Lists */
+  ul,
+  ol {
+	padding-left: 20px;
+	margin-top: 0;
+	margin-bottom: 1em;
+  }
+  
+  /* Images and videos */
+  img,
+  video {
+	max-width: 100%;
+	height: auto;
+  }
+  
+  /* Forms */
+  input,
+  button,
+  select,
+  textarea {
+	font: inherit; /* This ensures that form elements match the font in other content */
+	color: inherit;
+  }
+  
+  button {
+	cursor: pointer;
+  }
+  
+  /* Layout */
+  .container {
+	max-width: 1200px; /* Replace with your max width */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+	text-align: center;
+  }
+  
+  .text-left {
+	text-align: left;
+  }
+  
+  .text-right {
+	text-align: right;
+  }
+  
