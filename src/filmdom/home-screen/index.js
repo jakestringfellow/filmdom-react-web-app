@@ -42,7 +42,7 @@ function HomeScreen() {
      )
 
      }
-     <SearchScreen/>
+     {/* <SearchScreen/> */}
     
      {currentUser && (
       <div>

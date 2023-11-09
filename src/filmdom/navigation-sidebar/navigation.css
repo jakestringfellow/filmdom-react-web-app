@@ -2,31 +2,40 @@ span {
     white-space:nowrap;
 }
 
-.list-group {
+.list-group .navbar {
     /* background-color: black; */
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 8px;
+    /* padding-top: 10px; */
     padding-bottom: 8px;
-    color:rgb(31, 31, 31)
+    /* position: fixed; */
+    top: 0px;
+    position: sticky;
+    /* bottom: 0; */
+    /* align-items: flex-start; */
+    /* background-color: var(--secondary-bg-color); */
 }
 
 .list-group-item {
-    color:rgb(222, 217, 217);
-    background-color: rgb(24, 24, 24);
+    color: var(--main-text-color);
+    /* background-color: rgb(24, 24, 24); */
 
-    font-size: 26px;
+    font-size: 20px;
     justify-content: space-between;
+    max-width: 100%;
+    
     /* border: none; */
 }
 
 .fd-nav-item {
     justify-content: space-between;
     border: none;
+    padding-left: 30px;
+    
 }
 
 .selected-link {
-    color:rgb(211, 72, 72)
+    /* color:rgb(211, 72, 72) */
 }
 
 .list-group-item:hover {
@@ -35,7 +44,7 @@ span {
 
 
 
-.pos-fixed {
+/* .pos-fixed {
     top: 0px;
     left: 0px;
-}
+} */

@@ -16,22 +16,23 @@ import HomeScreen from "./home-screen";
 import "./filmdom.css";
 import ProfilePublic from "./profile-public";
 import Header from './header/header.js';
+import ResultsScreen from "./results";
 
 
 function Project() {
     return (
         <>
             <Header />
-            <div className="mt-2">
+            {/* <div className="mt-2"> */}
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-2 navbar">
                         <NavigationSidebar/>
                     </div>
                     <div className="col-9">
                         <Routes>
-                            <Route path="Home" element={<HomeScreen/>}/>
-                            <Route path="search" element={<SearchScreen/>}/>
-                            <Route path="search/:searchTerm" element={<SearchScreen/>}/>
+                            <Route path="home" element={<HomeScreen/>}/>
+                            <Route path="search" element={<ResultsScreen/>}/>
+                            <Route path="search/:query" element={<ResultsScreen/>}/>
                             <Route path="details/:id" element={<DetailsScreen/>}/>
                             <Route path="login" element={<LoginScreen/>}/>
                             <Route path="register" element={<RegisterScreen/>}/>
@@ -40,7 +41,7 @@ function Project() {
                         </Routes>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     
         

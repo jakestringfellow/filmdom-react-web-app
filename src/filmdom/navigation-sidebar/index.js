@@ -40,13 +40,13 @@ const NavigationSidebar = () => {
 
     return (     
         
-        <div className="list-group">
+        <div className="list-group navbar">
             <div className="row">
                 {linksToDisplay.map((link) => 
                 
                 <NavLink to={`/filmdom/${link}`} style={({ isActive }) => ({
                     //color: isActive ? '#fff' : '#545e6f',
-                    background: isActive ? '#404040' : '#181818',
+                    background: isActive ? `var(--main-bg-color)` : 'var(--secondary-bg-color)',
                   })} className={`list-group-item filmdom-nav-link fd-nav-item text-capitalize ${active === link ? "active" : ""}`}>
                 {LinkIcons(link)} {<span className="d-none d-xl-inline ">{link}</span>}
                 </NavLink>

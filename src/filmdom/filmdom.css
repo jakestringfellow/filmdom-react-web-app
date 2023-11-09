@@ -1,15 +1,48 @@
-.background-gray {
-    background-color: rgb(40, 40, 40);
-}
-
-body {
-    background-color: rgb(24, 24, 24);
-}
-
-text {
-    color:rgb(222, 217, 217)
-}
-
-.review-field {
+.col-2 .navbar {
+    padding-left: 0;
+    flex: 0 0 auto;
+    width: auto;
+    position: sticky;
+    top: 0;
     
+    
+    /* background-color: var(--secondary-bg-color); */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; */
+    /* position: fixed; */
+    /* top: 0;
+    left: 0; */
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.col-2 {
+    background-color: var(--secondary-bg-color);
+    height: 100vh;
+    position: sticky;
+    width: auto;
+    overflow: hidden;
+    top: 57px;
+    height: 91vh;
+    z-index: 10000;
+}
+
+.navbar {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* position: relative; */
+    align-self: flex-start;
+    /* z-index: 1000; */
+    max-width: 150px;
+   
 }

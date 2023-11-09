@@ -26,7 +26,7 @@ const SearchToReview = () => {
  return (
    <div className="row">
      <div className="col-auto">
-     <i className="user-icon"><FaUserSecret/></i>
+     {/* <i className="user-icon"><FaUserSecret/></i> */}
 
        {/* <img src="/images/nasa.png" width={60}/> */}
        {/* <span className="user-icon" width={60}>{FaUserSecret}</span> */}

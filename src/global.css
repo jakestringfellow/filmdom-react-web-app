@@ -40,7 +40,7 @@ html {
   }
   
   a:hover {
-	text-decoration: underline;
+	text-decoration: none;
   }
   
   /* Lists */
@@ -73,11 +73,11 @@ html {
   
   /* Layout */
   .container {
-	max-width: 1200px; /* Replace with your max width */
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	/* max-width: 1200px; Replace with your max width */ 
+	/* margin-left: auto; */
+	/* margin-right: auto; */
+	/* padding-left: 15px; */
+	/* padding-right: 15px; */
   }
   
   /* Utility Classes */
