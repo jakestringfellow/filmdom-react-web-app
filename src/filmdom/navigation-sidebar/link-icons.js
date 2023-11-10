@@ -1,37 +1,31 @@
-import { FaHome, FaRegUser, FaSearch, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEllipsisH } from "react-icons/fa";
-import { AiFillHome } from "react-icons/ai";
+import React from "react";
+import { ReactComponent as HomeIcon } from "./nav-icons/home-icon.svg";
+import { ReactComponent as SearchIcon } from "./nav-icons/search-icon.svg";
+import { ReactComponent as ProfileIcon } from "./nav-icons/profile-icon.svg";
+import { ReactComponent as SettingsIcon } from "./nav-icons/settings-icon.svg";
+import { ReactComponent as ReviewIcon } from "./nav-icons/review-icon.svg";
+import "./navigation.css";
+
 
 
 function LinkIcons(link) {
     if(link === "home") {
-        return (<i> <AiFillHome/>  </i>);
+        return ( <span className="nav-icon"> <HomeIcon/> </span>);
     } 
     else if (link === "search") {
-        return (<i> <FaSearch/>  </i>);
+        return (<span className="nav-icon"> <SearchIcon /></span>);
     }
     else if (link === "login") {
-        return (<i> <FaUser/></i>)
-    }
-    else if (link === "register") {
-        return (<i><FaRegUser/></i>)
-    }
-    else if (link === "notifications") {
-        return (<i> <FaBell/>  </i>);
-    }
-    else if (link === "messages") {
-        return (<i> <FaEnvelope/>  </i>);
-    }
-    else if (link === "bookmarks") {
-        return (<i> <FaBookmark/>  </i>);
-    }
-    else if (link === "lists") {
-        return (<i> <FaList/>  </i>);
+        return (<span className="nav-icon"><ProfileIcon/></span>)
     }
     else if (link === "profile") {
-        return (<i> <FaUser/>  </i>);
+        return (<span className="nav-icon"><ProfileIcon/></span>)
     }
-    else if (link === "more") {
-        return (<i> <FaEllipsisH/>  </i>);
+    else if (link === "settings") {
+        return (<span className="nav-icon"><SettingsIcon/></span>);
+    }
+    else if (link === "review") {
+        return (<span className="nav-icon"><ReviewIcon/></span>);
     }
    };
 export default LinkIcons;

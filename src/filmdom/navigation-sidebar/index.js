@@ -40,24 +40,21 @@ const NavigationSidebar = () => {
 
     return (     
         
-        <div className="list-group navbar">
+        <div className="navigation-sidebar list-group navbar">
             <div className="row">
                 {linksToDisplay.map((link) => 
                 
-                <NavLink to={`/filmdom/${link}`} style={({ isActive }) => ({
+                <NavLink to={`/filmdom/${link}`} 
+                style={({ isActive }) => ({
                     //color: isActive ? '#fff' : '#545e6f',
                     background: isActive ? `var(--main-bg-color)` : 'var(--secondary-bg-color)',
                   })} className={`list-group-item filmdom-nav-link fd-nav-item text-capitalize ${active === link ? "active" : ""}`}>
-                {LinkIcons(link)} {<span className="d-none d-xl-inline ">{link}</span>}
+                    <span className="nav-icon">{LinkIcons(link)}
+                    </span>
+                    {<span className="d-none d-xl-inline nav-text">{link}</span>}
                 </NavLink>
                 )}
             </div>
-            {/* <Link to='home' className="list-group-item list-group-item-action d-none d-xl-inline">Home</Link>
-            <Link to="search" className="list-group-item list-group-item-action d-none d-xl-inline">Search</Link>
-            <Link to="details" className="list-group-item list-group-item-action d-none d-xl-inline">Details</Link>
-            <Link to="login" className="list-group-item list-group-item-action d-none d-xl-inline">Login</Link>
-            <Link to="register" className="list-group-item list-group-item-action d-none d-xl-inline">Register</Link>
-            <Link to="profile" className="list-group-item list-group-item-action d-none d-xl-inline">Profile</Link> */}
         </div>
 
         
