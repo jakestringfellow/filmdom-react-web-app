@@ -4,6 +4,9 @@ import { ReactComponent as SearchIcon } from './search-icon.svg';
 import './header.css';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import * as service from "../omdb-service";
+import UserSettings from "./user-settings";
+// import { Link } from 'react-router-dom';
+
 
 function Header () {
 	const {searchTerm} = useParams();
@@ -24,10 +27,14 @@ function Header () {
 	return (
 		<header className="header">
 			<div className="container">
-				<div className="brand">
-					<CameraIcon className="icon-camera" /> 
-					<h1 className="header-title">FILMDOM</h1>
-				</div>
+				<Link to="home">
+					<div className="brand">
+						<CameraIcon className="icon-camera" /> 
+						<h1 className="header-title">FILMDOM</h1>
+					</div>
+
+				</Link>
+				
 				<div className="search rounded-pill">
 					<SearchIcon className="icon-search" />
 					<input 
@@ -45,7 +52,7 @@ function Header () {
 				</div>
 				<div className="currentUser">
 					{/* To be implemented */}
-					<span>Current User</span>
+					<span><UserSettings/></span>
 				</div>
 			</div>
 		</header>

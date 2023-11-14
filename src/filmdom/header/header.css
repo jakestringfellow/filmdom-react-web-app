@@ -29,7 +29,7 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 	margin-left: 20px;
-	margin-right: 20px;
+	margin-right: 0px;
 	
 }
 
@@ -74,7 +74,7 @@ body {
 
 .header .user-settings {
 	margin-right: 0px;
-	margin-left: 220px;
+	margin-left: 0px;
 
 }
 .icon-camera {
@@ -82,3 +82,37 @@ body {
 	width: auto;
 	margin-left: 0;
 }
+
+.user-avatar {
+}
+
+.anonymous {
+	font-size: 14px;
+
+}
+
+.row .user-settings {
+	margin: 0;
+	padding: 0;
+}
+
+.handle {
+	color: var(--secondary-text-color);
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+
+}
+
+.name {
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+
+}
+
+.current-user {
+
+	line-height: 1;
+}
+
