@@ -22,7 +22,8 @@ import ResultsScreen from "./results";
 function Project() {
     return (
         <>
-            <Header />
+                <Header />
+
             {/* <div className="mt-2"> */}
                 <div className="row">
                     <div className="col-2 navbar">

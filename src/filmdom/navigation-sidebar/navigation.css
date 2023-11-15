@@ -127,28 +127,28 @@
         bottom: 0;
         left: 0;
         width: 100%; /* Full viewport width */
-        height: 60px; /* Adjust to the height of your nav bar */
+        height: fit-content; /* Adjust to the height of your nav bar */
         z-index: 1000; /* Ensure it's above other content */
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         background-color: var(--secondary-bg-color); /* Or any color you prefer */
     }
 
     .navigation-sidebar .list-group {
-        margin: 0;
+        /* margin: 0; */
+        /* min-width: fit-content; */
     }
     .navigation-sidebar .list-group-item {
         /* Flex grow for equal spacing */
         flex: 1;
-        flex-basis: 0;
-        margin: 0;
+        /* flex-basis: 0; */
+        /* margin: 0; */
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px; /* Spacing inside each nav item */
-        min-width: 50px; /* Minimum width for tap targets */
+        /* padding: 10px; Spacing inside each nav item */
     }
    
     /* .navigation-sidebar { */
@@ -166,7 +166,7 @@
 
     .navigation-sidebar .list-group-item .nav-icon svg {
         height: 30px;
-        width: 30px;
+        width: 40px;
     }
     
 
