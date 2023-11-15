@@ -116,3 +116,26 @@ body {
 	line-height: 1;
 }
 
+@media (max-width: 991px) {
+	.header .search {
+		width: 40%;
+	}
+	.current-user {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+    .header .container {
+        flex-direction: column;
+		width: 100%;
+    }
+    .header .search, .header .brand {
+        width: 100%;
+    }
+	.header .search {
+		padding-top: 10px;
+		padding-left: 0;
+		margin-left: 0;
+	}
+}

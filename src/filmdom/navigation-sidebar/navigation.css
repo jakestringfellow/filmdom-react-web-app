@@ -111,4 +111,69 @@
     /* color: rgb(255, 217, 0) */
 }
 
+@media (max-width: 991px) {
+    .navigation-sidebar .list-group-item .nav-text {
+        display: none;
+    }
+    .col-2.navbar {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navigation-sidebar {
+        /* Fixed positioning at the bottom */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Full viewport width */
+        height: 60px; /* Adjust to the height of your nav bar */
+        z-index: 1000; /* Ensure it's above other content */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--secondary-bg-color); /* Or any color you prefer */
+    }
+
+    .navigation-sidebar .list-group {
+        margin: 0;
+    }
+    .navigation-sidebar .list-group-item {
+        /* Flex grow for equal spacing */
+        flex: 1;
+        flex-basis: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Spacing inside each nav item */
+        min-width: 50px; /* Minimum width for tap targets */
+    }
+   
+    /* .navigation-sidebar { */
+        /* position: fixed; */
+        /* bottom: 0; */
+        /* left: 0; */
+        /* width: 100%; */
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* height: 60px; */
+        /* align-items: center; */
+        /* justify-content: space-around; */
+
+    /* } */
+
+    .navigation-sidebar .list-group-item .nav-icon svg {
+        height: 30px;
+        width: 30px;
+    }
+    
+
+    .navigation-sidebar .nav-text {
+        display: none;
+    }
+
+   
+}
 

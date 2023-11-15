@@ -28,7 +28,7 @@ function Project() {
                     <div className="col-2 navbar">
                         <NavigationSidebar/>
                     </div>
-                    <div className="col-9">
+                    <div className="col-9 content-container">
                         <Routes>
                             <Route path="home" element={<HomeScreen/>}/>
                             <Route path="search" element={<ResultsScreen/>}/>
