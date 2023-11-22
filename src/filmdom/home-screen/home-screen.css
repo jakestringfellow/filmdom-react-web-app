@@ -4,6 +4,10 @@
    z-index: 10000;
 }
 
+.main-content {
+   padding: 1.5rem;
+}
+
 
 
 
@@ -11,7 +15,6 @@
 .tabs {
    display: flex;
    background-color: var(--secondary-bg-color); /* Match the navigation sidebar's background */
-   border-bottom: 1px solid #333; /* Optional: if you have a border under the tabs */
  }
  .tab {
    flex-grow: 1;

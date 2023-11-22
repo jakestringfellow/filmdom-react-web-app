@@ -76,6 +76,8 @@
     fill: var(--secondary-text-color);
     stroke: none;
     /* padding-left: 0px; */
+
+
     
     
     
@@ -96,6 +98,8 @@
 }
 
 
+
+
 /* .navigation-sidebar .list-group-item .nav-icon svg path {
 
 } */
@@ -109,6 +113,19 @@
 
 .list-group-item:hover {
     /* color: rgb(255, 217, 0) */
+}
+
+.fd-nav-item.non-active:hover {
+    background-color: #343640; /* Red background on hover for non-active links */
+}
+
+.fd-nav-item.active {
+    /* Styles for your active link */
+    background: var(--main-bg-color);
+}
+
+.fd-nav-item.non-active {
+    background-color: var(--secondary-bg-color);
 }
 
 
@@ -134,7 +151,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: var(--secondary-bg-color); /* Or any color you prefer */
+        background-color: var(--secondary-bg-color);
+        
     }
 
     .navigation-sidebar .list-group {

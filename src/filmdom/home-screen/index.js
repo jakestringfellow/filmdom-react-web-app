@@ -58,10 +58,8 @@ function HomeScreen() {
       </div>
       
      {activeTab == 'general' && (
-      <div>
-        <h3 className="filmdom-welcome">
-          Recent Reviews:
-        </h3>
+      <div className="main-content">
+        
         <div className="list-group">
             {allReviews.map((review) => (
               <ReviewItem key={review.id} review={review} />
@@ -70,8 +68,8 @@ function HomeScreen() {
       </div>
      )}    
      {activeTab === 'following' && currentUser && (
-        <div>
-          <h3 className="following-header">Following:</h3>
+        <div className="main-content">
+          
           <div className="list-group">
             {followedReviews.map((review) => (
               <ReviewItem key={review.id} review={review} />

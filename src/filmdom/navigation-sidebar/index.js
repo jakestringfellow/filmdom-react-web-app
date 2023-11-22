@@ -44,15 +44,12 @@ const NavigationSidebar = () => {
             <div className="row">
                 {linksToDisplay.map((link) => 
                 
-                <NavLink to={`/filmdom/${link}`} 
-                style={({ isActive }) => ({
-                    //color: isActive ? '#fff' : '#545e6f',
-                    background: isActive ? `var(--main-bg-color)` : 'var(--secondary-bg-color)',
-                  })} className={`list-group-item filmdom-nav-link fd-nav-item text-capitalize ${active === link ? "active" : ""}`}>
-                    <span className="nav-icon">{LinkIcons(link)}
-                    </span>
-                    {<span className="d-none d-xl-inline nav-text">{link}</span>}
-                </NavLink>
+                <NavLink 
+    to={`/filmdom/${link}`} 
+    className={`list-group-item filmdom-nav-link fd-nav-item text-capitalize ${active === link ? "active" : "non-active"}`}>
+    <span className="nav-icon">{LinkIcons(link)}</span>
+    <span className="d-none d-xl-inline nav-text">{link}</span>
+</NavLink>
                 )}
             </div>
         </div>
