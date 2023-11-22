@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./home-screen.css";
-import SearchScreen from "../header/search";
 import { useSelector } from "react-redux";
 import * as omdbService from "../omdb-service"
 import ReviewItem from "../reviews/review-item";
@@ -10,6 +9,7 @@ import ReviewItem from "../reviews/review-item";
 function HomeScreen() {
 
   const { currentUser } = useSelector((state) => state.users);
+  const [activeTab, setActiveTab] = useState('general');
 
   const fetchAllReviews = async () => {
     const reviews = await omdbService.findReviews();
@@ -36,60 +36,50 @@ function HomeScreen() {
 
  return(
    <>
-     <li className="home-header">Home</li>
-     {currentUser && (
-        <h3 className="filmdom-welcome">Welcome back, {currentUser.username}!</h3>
-     )
+      <div className="tabs-row">
+        <div className="tabs">
+            <button
+              className={`tab ${activeTab === 'general' ? 'active' : ''}`}
+              onClick={() =>setActiveTab('general')}
+            >
+              General
+            </button>
 
-     }
-     {/* <SearchScreen/> */}
-    
-     {currentUser && (
-      <div>
-        {followedReviews && (
-          <>
-          <h3 className="following-header">Following: </h3>
-          <div className="list-group">
-            {
-              followedReviews && 
-                followedReviews.map((review) => (
-
-                  <ReviewItem review={review}/>
-                
-                
-                ))
-            }
-            
-          </div>
-          </>
-        )}
-      </div>
-        
-     )}
-     {!currentUser && (
-      <div>
-        {allReviews && (
-          <>
-          <h3 className="following-header"> Recent Reviews: </h3>
-          <div className="list-group">
-            {
-              allReviews && 
-                allReviews.map((review) => (
-                  <div>
-                    <ReviewItem key={review.id} review={review}/>
-                  
-                
-                  </div>
-                ))
-            }
-            
-          </div>
-          </>
-        )}
+            {currentUser && (
+              <button
+                className={`tab ${activeTab === 'following' ? 'active' : ''}`}
+                onClick={() =>setActiveTab('following')}
+              >
+                Following
+              </button>
+            )}
+        </div>
 
       </div>
       
-     )}
+     {activeTab == 'general' && (
+      <div>
+        <h3 className="filmdom-welcome">
+          Recent Reviews:
+        </h3>
+        <div className="list-group">
+            {allReviews.map((review) => (
+              <ReviewItem key={review.id} review={review} />
+            ))}
+          </div>
+      </div>
+     )}    
+     {activeTab === 'following' && currentUser && (
+        <div>
+          <h3 className="following-header">Following:</h3>
+          <div className="list-group">
+            {followedReviews.map((review) => (
+              <ReviewItem key={review.id} review={review} />
+            ))}
+          </div>
+        </div>
+      )}
+     
    </>
  );
 };

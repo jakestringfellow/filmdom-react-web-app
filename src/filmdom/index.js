@@ -24,12 +24,12 @@ function Project() {
         <>
                 <Header />
 
-            {/* <div className="mt-2"> */}
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-2 navbar">
                         <NavigationSidebar/>
                     </div>
-                    <div className="col-9 content-container">
+                    <div className="col-10 content-container">
                         <Routes>
                             <Route path="home" element={<HomeScreen/>}/>
                             <Route path="search" element={<ResultsScreen/>}/>
@@ -41,8 +41,9 @@ function Project() {
                             <Route path="profile/:profileId" element={<ProfilePublic/>}/>
                         </Routes>
                     </div>
+                    
                 </div>
-            {/* </div> */}
+            </div>
         </>
     
         

@@ -1,39 +1,41 @@
-.wd-tabs li {
-    display: inline;
- }
- 
- .wd-tabs {
-    padding-left: 0px;
- }
- 
- .wd-selected {
-    border-bottom: 2px blue solid;
-    padding-bottom: 20px;
- }
- 
- .wd-nudge-up {
-    bottom: 3px;
-    left: 25px;
- }
- 
- .wd-bottom-2 {
-    bottom: 2px;
- }
- 
- .wd-top-4 {
-    top: 4px;
- }
- 
- .home-header {
-   color:rgb(222, 217, 217);
-   padding-top: 32px;
-   padding-left: 30px;
-   padding-bottom: 15px;;
-   font-size: 1.90em;
-   font-weight: 700;
+.tabs-row {
+   position: sticky;
+   top: 57px;
+   z-index: 10000;
 }
 
-.following-header {
-   color: rgb(189, 189, 189);
-   padding-left: 30px;
+
+
+
+
+.tabs {
+   display: flex;
+   background-color: var(--secondary-bg-color); /* Match the navigation sidebar's background */
+   border-bottom: 1px solid #333; /* Optional: if you have a border under the tabs */
+ }
+ .tab {
+   flex-grow: 1;
+   text-align: center;
+   padding: 10px 20px;
+   cursor: pointer;
+   background-color: var(--secondary-bg-color); /* Active tab color */
+   color: var(--main-text-color); /* Text color */
+   border: none;
+   height: 40px;
+ }
+
+ .tab.active {
+   background-color: var(--main-bg-color); /* Color for active tab */
+   color: var(--secondary-text-color); /* Text color for active tab */
+ }
+ 
+ .tab:not(.active):hover {
+   background-color: #343640; /* Color for hover state on inactive tabs */
+ }
+
+@media (max-width: 576px) {
+   .tabs-row {
+      top: 92px;
+   }
+
 }

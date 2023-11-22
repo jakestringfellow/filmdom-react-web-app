@@ -17,6 +17,10 @@
 
 }
 
+
+
+
+
 .header-section {
     width: 100%;
 }
@@ -29,6 +33,12 @@
     padding-top: 0;
     /* margin-left: 0; */
     margin-right: 0;
+    
+}
+
+.container-fluid {
+    padding:0;
+    margin: 0;
 }
 
 
@@ -43,6 +53,8 @@
     z-index: 10000;
 }
 
+
+
 .navbar {
     margin-top: 0;
     padding-top: 20px;
@@ -53,6 +65,10 @@
     max-width: 150px;
    
 }
+
+.content-container {
+    padding: 0;
+ }
 
 @media (max-width: 576px) {
 
