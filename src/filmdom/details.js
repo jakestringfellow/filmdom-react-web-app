@@ -9,7 +9,7 @@ function DetailsScreen() {
     const { currentUser } = useSelector((state) => state.users);
     const {id} = useParams();
     const [movieDetails, setMovieDetails] = useState();
-    const[episodes, setEpisodes] = useState();
+    // const[episodes, setEpisodes] = useState();
     const [peopleWhoLiked, setPeopleWhoLiked] = useState();
     const [movieReviews, setMovieReviews] = useState();
     let [reviewText, setReviewText] = useState('');

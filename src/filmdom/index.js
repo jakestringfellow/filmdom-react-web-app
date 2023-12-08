@@ -26,10 +26,10 @@ function Project() {
 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-2 navbar">
+                    <div className="col-md-2 navbar">
                         <NavigationSidebar/>
                     </div>
-                    <div className="col-10 content-container">
+                    <div className="col-md-10 content-container">
                         <Routes>
                             <Route path="home" element={<HomeScreen/>}/>
                             <Route path="search" element={<ResultsScreen/>}/>

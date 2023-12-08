@@ -33,7 +33,8 @@
     
 
     padding-left: 10px;
-    
+    font-weight: bold;
+        
     
     /* border: none; */
 }
@@ -133,8 +134,11 @@
     .navigation-sidebar .list-group-item .nav-text {
         display: none;
     }
-    .col-2.navbar {
+    .col-md-2.navbar {
         max-width: 60px;
+    }
+    .col-md-2 {
+        overflow: hidden;
     }
 }
 
