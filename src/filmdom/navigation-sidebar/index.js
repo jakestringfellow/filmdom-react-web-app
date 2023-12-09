@@ -22,8 +22,8 @@ const NavigationSidebar = () => {
     //     setLinks(links);
     // }
 
-    const authLinks = ["home", "search", "profile", "settings", "review"];
-    const anonLinks = ["home", "search", "login", "settings", "review"];
+    const authLinks = ["home", "search", "profile", "settings"];
+    const anonLinks = ["home", "search", "login", "settings"];
 
     const linksToDisplay = currentUser ? authLinks : anonLinks;
 
