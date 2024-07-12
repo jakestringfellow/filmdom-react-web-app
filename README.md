@@ -12,7 +12,7 @@ Frontend:
 
 Backend:
 - NodeJS
-- MongoDB
+- MongoDB 
 - Express
 - CORS
 
